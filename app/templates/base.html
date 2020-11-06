@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Pega Flashcards</title>
+    </head>
+    <body>
+        <div id="reactHolder"></div>
+        <div style="position: absolute;left:-10;top:-10;font-size:0;width:0;height:0;" id="flashCardContent">{{current_card}}</textarea>
+        <!-- Load React. -->
+        <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+         <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+        <!-- Load our React component. -->
+        <script type="text/jsx">
+
+        'use strict';
+
+        const e = React.createElement;
+
+        class FlashCardInterface extends React.Component {
+            constructor(props) {
+               super(props);
+
+               this.state = {
+                      cards:undefined,
+                      message: undefined,
+                      windowWidth: window.innerWidth,
+                      windowHeight: window.innerHeight,
+                   };
+                this.handleResize = this.handleResize.bind(this);
+                this.setClick = this.setClick.bind(this);
+             }
+            setClick(){
+                this.setState({ message: "you clicked me" })
+            }
+            handleResize(e){
+             this.setState({ windowWidth: window.innerWidth });
+             this.setState({ windowHeight: window.innerHeight });
+             this.setState({ message: undefined });
+            };
+            componentDidMount() {
+             window.addEventListener("resize", this.handleResize);
+             const flashCards = document.getElementById("flashCardContent").innerHTML
+
+             this.setState({cards:flashCards})
+            }
+            componentWillUnMount() {
+             window.addEventListener("resize", this.handleResize);
+            }
+          render() {
+            let message, buttonProps, divStyle, children;
+            // landscape mode
+            if (this.state.windowWidth>this.state.windowHeight) {
+                message = 'landscape.';
+                divStyle = {style: {display:"flex",justifyContent:"space-around",width:"95%",height:"70%",marginLeft:"2.5%",marginTop:"10vh"} }
+                buttonProps = { style: {color: "white", backgroundColor: "black",borderStyle:"none",width:"5vw",height:"5vw",minWidth:"100px",minHeight:"100px",alignSelf:"center",borderRadius:"10px",fontSize:"3vw"}, onClick: this.setClick }
+                children = [
+                             e('div',{style: {display:"flex",justifyContent:"space-around", flexDirection:"column"} }, e('button',buttonProps,"-"), e('button',buttonProps,"+")),
+                             e('div',{style: {margin:"1vw",width:"100%",height:"100%",overflow:"scroll",paddingLeft:"3vw",paddingRight:"3vw"} },this.state.cards),
+                             e('div',{style: {display:"flex",justifyContent:"space-around", flexDirection:"column"} }, e('button',buttonProps,"<-"), e('button',buttonProps,"->")),
+                            ]
+            // portrait mode
+            } else if (this.state.windowWidth<=this.state.windowHeight) {
+                message = 'portrait.';
+                divStyle = {style: {flexDirection:"column",display:"flex",justifyContent:"space-around",width:"96%",height:"90%",margin:"2%",marginTop:"5vh", marginBottom:"5vh"} }
+                buttonProps = {style: {color: "white", backgroundColor: "black",borderStyle:"none",width:"5vw",height:"5vw",alignSelf:"center",minWidth:"75px",minHeight:"75px",margin:"2vh",borderRadius:"10px",fontSize:"3vw"}, onClick: this.setClick }
+                children = [
+                             e('div',{style: {width:"100%",height:"100%",overflow:"scroll",paddingTop:"3vh",marginBottom:"3vh"} },this.state.cards),
+                             e('div',{style: {display:"flex",justifyContent:"center"} }, e('button',buttonProps,"-"), e('button',buttonProps,"+")),
+                             e('div',{style: {display:"flex",justifyContent:"space-around"} }, e('button',buttonProps,"<-"), e('button',buttonProps,"->")),
+                           ]
+            }
+            if (this.state.message!=undefined){
+                message = this.state.message;
+            }
+            return e(
+                'div',
+                divStyle,
+                ...children
+            );
+          }
+        }
+        const domContainer = document.querySelector('#reactHolder');
+        ReactDOM.render(e(FlashCardInterface), domContainer);
+          </script>
+    </body>
+</html>
