@@ -22,52 +22,95 @@
                super(props);
 
                this.state = {
-                      cards:undefined,
+                      cards:[["hi"],["ho"],["he"],["ha"]],
                       message: undefined,
+                      cardIndex:0,
+                      definitionIndex:1,
                       windowWidth: window.innerWidth,
                       windowHeight: window.innerHeight,
                    };
                 this.handleResize = this.handleResize.bind(this);
-                this.setClick = this.setClick.bind(this);
+                this.incrementCardIndex = this.incrementCardIndex.bind(this);
+                this.decrementCardIndex = this.decrementCardIndex.bind(this);
+                this.incrementDefinitionIndex = this.incrementDefinitionIndex.bind(this);
+                this.decrementDefinitionIndex = this.decrementDefinitionIndex.bind(this);
              }
-            setClick(){
-                this.setState({ message: "you clicked me" })
+            incrementCardIndex(){
+                this.setState({ cardIndex: this.state.cardIndex+1 })
+                this.setState({ definitionIndex: 1 })
+
+                console.log(this.state)
+            }
+            decrementCardIndex(){
+                this.setState({ cardIndex: this.state.cardIndex-1 })
+                this.setState({ definitionIndex: 1 })
+
+                console.log(this.state)
+            }
+            incrementDefinitionIndex(){
+                this.setState({ definitionIndex: this.state.definitionIndex+1 })
+                console.log(this.state)
+            }
+            decrementDefinitionIndex(){
+                this.setState({ definitionIndex: this.state.definitionIndex-1 })
+                console.log(this.state)
             }
             handleResize(e){
              this.setState({ windowWidth: window.innerWidth });
              this.setState({ windowHeight: window.innerHeight });
-             this.setState({ message: undefined });
             };
             componentDidMount() {
              window.addEventListener("resize", this.handleResize);
              const flashCards = document.getElementById("flashCardContent").innerHTML
-
-             this.setState({cards:flashCards})
+             let cards = flashCards.split("*")
+             let terms;
+             for (let i=0; i< cards.length;i++){
+                 terms = cards[i].split("\t")
+                 cards[i] = terms
+             }
+             // shuffle cards
+             // https://medium.com/@nitinpatel_20236/how-to-shuffle-correctly-shuffle-an-array-in-javascript-15ea3f84bfb
+             for(let i = cards.length - 1; i > 0; i--){
+                  const j = Math.floor(Math.random() * i)
+                  const temp = cards[i]
+                  cards[i] = cards[j]
+                  cards[j] = temp
+                }
+             this.setState({cards:cards})
             }
             componentWillUnMount() {
              window.addEventListener("resize", this.handleResize);
             }
           render() {
-            let message, buttonProps, divStyle, children;
+            let message, buttonStyle, divStyle, children, term;
+            let terms = []
             // landscape mode
             if (this.state.windowWidth>this.state.windowHeight) {
                 message = 'landscape.';
                 divStyle = {style: {display:"flex",justifyContent:"space-around",width:"95%",height:"70%",marginLeft:"2.5%",marginTop:"10vh"} }
-                buttonProps = { style: {color: "white", backgroundColor: "black",borderStyle:"none",width:"5vw",height:"5vw",minWidth:"100px",minHeight:"100px",alignSelf:"center",borderRadius:"10px",fontSize:"3vw"}, onClick: this.setClick }
+                buttonStyle = {color: "white", backgroundColor: "black",borderStyle:"none",width:"5vw",height:"5vw",minWidth:"100px",minHeight:"100px",alignSelf:"center",borderRadius:"10px",fontSize:"3vw"}
+                for (let i = 0; i < this.state.definitionIndex;i++){
+                    term = e('h3',{style: {marginTop:"1vh",fontSize:"4vw"} },this.state.cards[this.state.cardIndex][i])
+                    terms.push(term)
+                }
                 children = [
-                             e('div',{style: {display:"flex",justifyContent:"space-around", flexDirection:"column"} }, e('button',buttonProps,"-"), e('button',buttonProps,"+")),
-                             e('div',{style: {margin:"1vw",width:"100%",height:"100%",overflow:"scroll",paddingLeft:"3vw",paddingRight:"3vw"} },this.state.cards),
-                             e('div',{style: {display:"flex",justifyContent:"space-around", flexDirection:"column"} }, e('button',buttonProps,"<-"), e('button',buttonProps,"->")),
+                             e('div',{style: {display:"flex",justifyContent:"space-around", flexDirection:"column"} }, e('button',{style:buttonStyle, onClick: this.decrementDefinitionIndex},"-"), e('button',{style:buttonStyle, onClick: this.incrementDefinitionIndex},"+")),
+                             e('div',{style: {margin:"1vw",width:"100%",height:"100%",overflow:"scroll",paddingLeft:"3vw",paddingRight:"3vw"} },terms),
+                             e('div',{style: {display:"flex",justifyContent:"space-around", flexDirection:"column"} }, e('button',{style:buttonStyle, onClick: this.decrementCardIndex},"<-"), e('button',{style:buttonStyle, onClick: this.incrementCardIndex},"->")),
                             ]
             // portrait mode
             } else if (this.state.windowWidth<=this.state.windowHeight) {
                 message = 'portrait.';
                 divStyle = {style: {flexDirection:"column",display:"flex",justifyContent:"space-around",width:"96%",height:"90%",margin:"2%",marginTop:"5vh", marginBottom:"5vh"} }
-                buttonProps = {style: {color: "white", backgroundColor: "black",borderStyle:"none",width:"5vw",height:"5vw",alignSelf:"center",minWidth:"75px",minHeight:"75px",margin:"2vh",borderRadius:"10px",fontSize:"3vw"}, onClick: this.setClick }
+                buttonStyle = {color: "white", backgroundColor: "black",borderStyle:"none",width:"5vw",height:"5vw",alignSelf:"center",minWidth:"75px",minHeight:"75px",margin:"2vh",borderRadius:"10px",fontSize:"3vw"}
+                for (let i = 0; i < this.state.definitionIndex;i++){
+                    term = e('h3',{style: {marginTop:"1vh",fontSize:"8vw"} },this.state.cards[this.state.cardIndex][i])
+                    terms.push(term)
+                }
                 children = [
-                             e('div',{style: {width:"100%",height:"100%",overflow:"scroll",paddingTop:"3vh",marginBottom:"3vh"} },this.state.cards),
-                             e('div',{style: {display:"flex",justifyContent:"center"} }, e('button',buttonProps,"-"), e('button',buttonProps,"+")),
-                             e('div',{style: {display:"flex",justifyContent:"space-around"} }, e('button',buttonProps,"<-"), e('button',buttonProps,"->")),
+                             e('div',{style: {width:"100%",height:"100%",overflow:"scroll",paddingTop:"3vh",marginBottom:"3vh"} },terms),
+                             e('div',{style: {display:"flex",justifyContent:"center"} }, e('button',{style:buttonStyle, onClick: this.decrementDefinitionIndex},"-"), e('button',{style:buttonStyle, onClick: this.incrementDefinitionIndex},"+")),
+                             e('div',{style: {display:"flex",justifyContent:"space-around"} }, e('button',{style:buttonStyle, onClick: this.decrementCardIndex},"<-"), e('button',{style:buttonStyle, onClick: this.incrementCardIndex},"->")),
                            ]
             }
             if (this.state.message!=undefined){

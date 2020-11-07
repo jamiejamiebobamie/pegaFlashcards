@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from app import app
-from app.utils.flashcards import import_notes, create_cards, review_cards#,Term
+from app.utils.flashcards import import_notes, create_cards, review_cards
 
 @app.route('/')
 def index():

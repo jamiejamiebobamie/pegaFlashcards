@@ -75,9 +75,8 @@ def review_cards(cards):
 
     for i in range(len(cards)):
         recur_Terms(cards[i])
-
-    # string_definitions = "".join(definitions)
-    return definitions
+        definitions.append("*")
+    return "".join(definitions)
 
 if __name__ == "__main__":
     lineArray = import_notes()
