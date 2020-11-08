@@ -64,36 +64,34 @@ if a user does not have the privileges required to run a rule
 	Pega sends a message: “the rule is not authorized for execution.”
 Availability of a rule:
 	visible on the rule form next to the rule name or description
-	used to determine if a rule is available for use during rule
-		resolution
-	used to determine if you can view, copy, or edit a rule in Dev
-		Studio.
+	used to determine if a rule is available for use during rule resolution
+	used to determine if you can view, copy, or edit a rule in Dev Studio.
 Availability: Available:
-may be used
-the default
-can view, copy, edit, and execute
+	may be used
+	the default
+	can view, copy, edit, and execute
 Availability: Final:
-may be used
-can view and execute
-cannot be edited or copied
-indicates may be changed in subsequent releases
+	may be used
+	can view and execute
+	cannot be edited or copied
+	indicates may be changed in subsequent releases
 Availability: Not Available:
-may not be used
-indicates to the algorithm to use the next-highest version
-can view, copy, edit
-cannot execute
-good for initial development: “allows you to save a rule without validation” (?)
+	may not be used
+	indicates to the algorithm to use the next-highest version
+	can view, copy, edit
+	cannot execute
+	good for initial development: “allows you to save a rule without validation” (?)
 Availability: Blocked:
-may be used
-can view, copy, edit
-does not execute (is available)
-if executed, execution is halted, and an error message is added to the log file.
+	may be used
+	can view, copy, edit
+	does not execute (is available)
+	if executed, execution is halted, and an error message is added to the log file.
 Availability: Withdrawn:
-may not be used
-can view, copy, edit
-does not execute
-all rules that are in the same ruleset with an equal or lower
-version number and the same rule type and Apply to: class are hidden and no longer considered after Availability is checked during the rule resolution process.
+	may not be used
+	can view, copy, edit
+	does not execute
+	all rules that are in the same ruleset with an equal or lower
+	version number and the same rule type and Apply to: class are hidden and no longer considered after Availability is checked during the rule resolution process.
 circumstancing
 	a way of modeling complex exceptions by creating a variant of a rule
 	allows you to customize the behavior of your application to address each exception condition you identify using a collection of targeted rules rather than one complex, difficult-to-maintain rule
@@ -104,17 +102,16 @@ To circumstance a rule:
 	start by creating a base rule to define the expected behavior then, identify any exceptions to the expected behavior
 the base rule is used if
 	a circumstanced version that is more appropriate can’t be found
-
 the circumstance template:
 	the rule that defines the properties used to determine if the circumstance is applicable
 a circumstance definition:
 	defines the values for the circumstance template
 Queue processors:
 	queue objects and then process them
-if queued process fails, the queue entry:
-	goes into failure status
-	indicates the process is broken
-	reverses any changes the process initiated
+if queued process fails, the queue entry goes into
+	failure status. This indicates the process is
+	broken. What happens to any any changes the process initiated?
+	They are reversed.
 the Queue processor landing page in Admin Studio does what
 	traces and monitors Queue Processor rules
 users with the SysAdmin4 role can do what and examine what
@@ -149,8 +146,7 @@ an appender:
 where is the appender configuration stored
 	the prlog4j2.xml file, used for the entire node.
 logs can be found where
-	In Dev Studio, from the Configure > System >
-		Operations landing page
+	In Dev Studio, from the Configure > System > Operations landing page
 what are the different types of logs:
 	PEGA log
 	ALERT log
@@ -168,7 +164,7 @@ The PEGA log is also referred to as
 The PEGA log is used for
 	debugging an application
 By default the PEGA log filters based on what
-the current operator ID
+	the current operator ID
 The ALERT log contains
 	performance-related alerts
 You can use the PLA tool with the ALERT log to do what?
@@ -213,9 +209,9 @@ what two designations does the Tracer log give to steps:
 	a status of Good
 	a status of Fail
 the Tracer log displays each event on a separate row. what are the colors and what do they mean?
-Gray – Activity processing
-Orange – Events from flow, decision, or declarative rules
-Light blue – PegaRULES database and cache operations
+	Gray – Activity processing
+	Orange – Events from flow, decision, or declarative rules
+	Light blue – PegaRULES database and cache operations
 the Tracer log shows each event by
 	thread
 	event type
@@ -238,9 +234,9 @@ Watch functions
 	similar to breakpoints, but monitor a specific property value or values
 	shows if or when these properties change
 which three performance tools can be found on the Performance landing page:
-Performance Analyzer (PAL)
-Database Trace
-Performance Profiler
+	Performance Analyzer (PAL)
+	Database Trace
+	Performance Profiler
 the Performance Analyzer (PAL)
 	shows the system resources consumed by processing a single requestor session
 	works on existing data
@@ -282,18 +278,18 @@ True or False? the Performance Profiler requires substantial processing overhead
 	True
 the Database Trace produces what:
 	a text file containing:
-		the SQL statements
-		rule cache hit statistics
-		timings
-		other data related to your requestor session with the Pega Platform™ database or other relational databases
+	the SQL statements
+	rule cache hit statistics
+	timings
+	other data related to your requestor session with the Pega Platform™ database or other relational databases
 to find the Database Trace:
-Dev Studio > System > Performance > Database Trace) 	
+	Dev Studio > System > Performance > Database Trace) 	
 The Performance Analyzer (PAL) provides
 	a view of all the performance statistics that Pega Platform captures
 Use the Performance Analyzer (PAL) to
 	understand the system resources consumed by processing a single requestor session
 to find PAL in Dev Studio:
-Dev Studio > System > Performance
+	Dev Studio > System > Performance
 the INIT row in PAL data displays
 	the totals from the first reading
 the DELTA rows in PAL data displays
@@ -312,16 +308,15 @@ When using PAL, run through the process once to ensure
 Relevant records
 	items that define and are most likely to be reused for a case or data type
 What can you configure as a relevant record?
-Fields / properties
-Views / sections
-Processes / flows
-User actions / flow actions
-Correspondences
+	Fields / properties
+	Views / sections
+	Processes / flows
+	User actions / flow actions
+	Correspondences
 a record is automatically marked as relevant when
 	you create them by using Data Designer or Case Designer
-duplicate case
-	a case that has many of the same data values as another
-		case already in the system.
+duplicate case is ?
+	a case that has many of the same data values as another case already in the system.
 	matching data is not an issue. it’s a specific combination of data values
 search duplicate cases process
 	helps users identify and resolve duplicate cases
@@ -363,10 +358,9 @@ when using a Split For Each shape make sure…
 	that the flow and the page list used in the iteration are in the same class
 what special join condition can be used with a Split For Each shape?
 	an Iterate join condition
-		starts flows for items on the Page Group or Page List property one by one, testing an optional when condition to determine whether to start the flow for a given iteration
+	starts flows for items on the Page Group or Page List property one by one, testing an optional when condition to determine whether to start the flow for a given iteration
 spinoff option in the Subprocess shape
-	allows you to run the subprocess in parallel with the main
-		flow.
+	allows you to run the subprocess in parallel with the main flow.
 True or False? The main process of a spinoff subprocess does not wait for the subprocess to complete before proceeding.
 	True.
 a join condition controls
@@ -375,9 +369,9 @@ which flow shapes can use a join condition?
 	Split For Each
 	Split Join
 what are the 3 types of join conditions?
-	any:
-	all:
-	some:
+	any
+	all
+	some
 any join condition
 	main flow resumes after any one subprocesses completes
 	other subprocesses are stopped
@@ -396,19 +390,17 @@ optimistic locking strategy
 	the application checks whether the item has changed before committing any changes.
 Allow one user
 	a pessimistic locking strategy
-	a user opens the case, Pega Platform locks the case to
-		prevent other users from applying any changes.
+	a user opens the case, Pega Platform locks the case to prevent other users from applying any changes.
 	can set a time-out value for the lock
-	After the time-out period lapses, another user can open and
-		update the case
+	After the time-out period lapses, another user can open and update the case
 	default time-out period is 30 minutes.
 Allow multiple users
 	an optimistic locking strategy
 	Pega Platform checks for changes to the case when a user attempts to save their updates
 If a case, with an Allow multiple users locking strategy, has changed what happens?
 	Pega Platform prompts the user to either:
-		reload the case and reapply any change or
-		close the case without saving their changes.
+	reload the case and reapply any change or
+	close the case without saving their changes.
 do child cases inherit the locking strategy from their parent case?
 	Yes.
 if Allow one user is selected for the parent case, what happens to the parent case when the child case is opened?
@@ -416,7 +408,6 @@ if Allow one user is selected for the parent case, what happens to the parent ca
 To allow a second user to update a parent case while the child case is open, select the
 	Allow other users to access parent case when the child case is opened check box on the parent or child case?
 	the child case.
-
 If you configure a child case to override the locking strategy of the parent case, configure the time-out value of the child case to be
 	less than the time-out value of the parent
 When working with a case type hierarchy
@@ -432,15 +423,15 @@ a decision table:
 	tests multiple values to answer a question
 	resembles a spreadsheet with rows and columns
 a decision table can be referenced in:
-		decision shapes
-		declare expressions
-		activities
-		routers
+	decision shapes
+	declare expressions
+	activities
+	routers
 the otherwise row of a decision table returns if
 	none of the conditions evaluate to true.
 the Evaluate all rows option of a decision table enables
 	the decision table to evaluate all rows, returning
-		an array of results
+	an array of results
 use decision trees to
 	handle logic that returns a result from a set of test conditions
 decision trees can be referenced in:
@@ -449,12 +440,12 @@ decision trees can be referenced in:
 	activities
 	routers
 unit testing
-testing something on its own before testing it in the context of the entire application
+	testing something on its own before testing it in the context of the entire application
 you can test decision tables and trees with
 	Show Conflicts
-		test for conflicts in the logic (logic that will never evaluate)
+	test for conflicts in the logic (logic that will never evaluate)
 	Show completeness
-		check for completeness (missing logic)
+	check for completeness (missing logic)
 a cascading approval step with an authority matrix is used when a decision requires
 	multiple approvals from different parts of the organization (not a direct line of authority)
 a cascading approval step with an authority matrix requires what things to make?
@@ -466,9 +457,9 @@ what three things can be used instead of a decision table to populate the rows?
 	data transform or
 	activity
 To configure a cascading approval step with an authority matrix
-add an approval step to a stage
-specify Cascading as the type
-specify Authority matrix as the model
+	add an approval step to a stage
+	specify Cascading as the type
+	specify Authority matrix as the model
 what are the two types of cascading approvals?
 	reporting structure
 	authority matrix
@@ -514,11 +505,11 @@ Authorized managers of a work group are not…
 	required to be part of the work group
 	not allowed to perform approvals or complete assignments
 to add a new unit to an organizational structure:
-Add a new unit to the hierarchy.
-Create a new work group.
-Create a new work queue.
-Associate the work queue with the work group.
-Associate the unit and work group with an operator.
+	Add a new unit to the hierarchy.
+	Create a new work group.
+	Create a new work queue.
+	Associate the work queue with the work group.
+	Associate the unit and work group with an operator.
 when adding a new unit to an organizational structure you cannot create…
 	both the work queue and the work group at the same time as they are mutually dependent
 	use an existing work queue then go back and update the work group to correct work queue
@@ -543,9 +534,9 @@ field values enable
 	a field value in the Work- context
 field values support localization of
 	words, phrases, and sentences that appear on
-		portal displays
-		reports
-		user forms
+	portal displays
+	reports
+	user forms
 to create field values:
 	organize a list of allowed values you want to display in the list for the property
 	create a Field Value record for each allowed value. In the record, enter the value you want to display
@@ -558,16 +549,12 @@ True or False? Pega has ootb, default portals that can be customized.
 harness records
 	organize the structure of a portion of the user display
 what are the four standard harnesses?
-	New
-		Supports the creation of new cases.
-	Perform
-		Enables users to select a flow action to perform to complete an assignment.
-	Review
-		Presents an assignment in read-only mode, preventing data entry.
-	Confirm
-		Presents a read-only confirmation of completion of an assignment if the next assignment is not performed by the user.
-can customize the default end-user portals provided in Pega
-if the customization is complex enough, you can also create a custom application portal.
+	New - Supports the creation of new cases.
+	Perform - Enables users to select a flow action to perform to complete an assignment.
+	Review - Presents an assignment in read-only mode, preventing data entry.
+	Confirm - Presents a read-only confirmation of completion of an assignment if the next assignment is not performed by the user.
+You can customize the default end-user portals provided in Pega if the customization is complex enough, you can also
+	create a custom application portal.
 a portal is represented with
 	a portal rule.
 a portal rule identifies:
@@ -593,7 +580,6 @@ User portals can be used to configure
 	delegated rules
 Developer portals are intended for
 	system architects and business architects who routinely update rules.
-Developer portals are used to configure rules on a daily basis
 where can you select the user role and portal type
 	on the Details tab of the portal record
 default user portals are organized with:
@@ -633,7 +619,10 @@ How do users access their non-default portals?
 	from either the Operator menu or the Launch menu, depending on the portal.
 a skin defines
 	the responsive behavior and formatting of
-		colors, fonts, images, and layouts
+	colors,
+	fonts,
+	images, and
+	layouts
 a skin applies formatting through the use of
 	mixins and formats
 mixins define
@@ -646,8 +635,8 @@ what are the four categories of mixin?
 	Border: Allows you to configure borders and gradient effects
 	Combination: Allows users to create complex mixins that incorporate multiple mixin types
 mixins should be applied at what organizational level?
-the application level
-	can also be applied to a portal
+	the application level
+	can also be applied to a portal (?)
 mixins should be the first…
 	point of customization as they are the most reusable
 a format defines
@@ -657,16 +646,16 @@ how do you configure a format?
 a UI component is styled within
 	a skin
 True or False? a UI component can have multiple formats defined for it?
-True.
-What are the four categories of components:
-General: Modal Dialogs, Errors
-Layouts: Dynamic Layouts, Trees and Grids
-Controls: Buttons, Dropdowns, Labels
-Reports: List View, Paging Bar
+	True.
+What are the four categories of UI components:
+	General: Modal Dialogs, Errors
+	Layouts: Dynamic Layouts, Trees and Grids
+	Controls: Buttons, Dropdowns, Labels
+	Reports: List View, Paging Bar
 Starting with a control UI component, what is the the relationship between mixins, formats, skins? a Control specifies…
 	a format, which is defined in
-		a skin, where the styles of
-			the mixin are loaded
+	a skin, where the styles of
+	the mixin are loaded
 WAI-ARIA stands for?
 	Web Accessibility Initiative-Accessible Rich Internet Applications
 What is WAI-ARIA?
@@ -691,11 +680,11 @@ What are the two main features of the Accessibility Inspector tool
 	Disability preview
 	Audit your UI by category
 The Disability preview of the Accessibility Inspector tool allows you to view your app with what visual disabilities?
-None
-Achromatopsia (Absence of color)
-Deuteranopia (Red Green confusion)
-Protanopia (Red Green confusion)
-Tritanopia (Yellow Blue confusion)
+	None
+	Achromatopsia (Absence of color)
+	Deuteranopia (Red Green confusion)
+	Protanopia (Red Green confusion)
+	Tritanopia (Yellow Blue confusion)
 What are the categories for the the Accessibility Inspector tool audit your UI by category feature?
 	Content – For example, an icon is missing helper text or a label.
 	Structural – For example, the heading level hierarchy is out of order, which can potentially confuse screen readers.
@@ -715,10 +704,8 @@ To configure Dynamic UI
 	identify the UI element target that you want to dynamically show, hide, or disable
 	decide at which level (section, layout, or field) to apply the condition
 What are the two types of events for the event-action model?
-	property-based events:
-		occur when a data value changes or when a value meets specific criteria.
-	user event:
-		occurs when an end user takes some action (event types often overlap)
+	property-based events: occur when a data value changes or when a value meets specific criteria.
+	user event: occurs when an end user takes some action (event types often overlap)
 Run visibility condition on client option reduces
 	the number of server trips and avoids page refreshes
 Run visibility condition on client option is displayed when
@@ -728,12 +715,9 @@ Run visibility condition on client option causes the clipboard page to
 Run visibility condition on client option causes the application to
 	refresh the section based on the visibility condition
 action sets consist of
-	an event
-		a trigger performed by users
-	an action
-		a response performed by the system
-	(optionally) conditions
-		restrictions such as when rules
+	an event: a trigger performed by users
+	an action: a response performed by the system
+	(optionally) conditions: restrictions such as when rules
 action sets require at least…
 	one event and one action
 True or False? You can create multiple action sets for a single control or layout?
@@ -742,7 +726,12 @@ the Localization wizard automates
 	the steps to create language-specific versions of your application
 the Localization wizard identifies
 	field values and text strings that are used in
-		harness, section, list view, summary view, message, and portal rules.
+	harness,
+	section,
+	list view,
+	summary view,
+	message, and
+	portal rules.
 What rules are are automatically configured to be selected for localization?
 	harness
 	section
@@ -790,7 +779,7 @@ In a Pega Web Mashup, getGadgetData and setGadgetData actions
 In a Pega Web Mashup the Firefox browser converts
 	DIV attribute names to all lowercase letters
 	to prevent this
-		use object literal notation.
+	use object literal notation.
 If you need to style a mashup to match a company web site apply the skin rule by configuring a portal for web mashup using a portal skin
 What are the steps to configure a portal for web mashup:
 	create a portal and assign the portal to the access group for web mashup users. A web mashup may be intended for unauthenticated users or customers who lack a Pega operator ID. In this situation, you can configure the access group created for mashup users to reference the portal
@@ -813,11 +802,11 @@ External system
 steps to execute connector invocation:
 	The data page or activity executes a data transform to map the data from your application to the integration clipboard pages.
 	The data page or activity invokes the connector:
-		The connector is initialized based on its type. The type is the protocol the connector supports.
-		The connector maps the request data to the protocol-specific format using the mapping rules specified for the connector. Do not confuse this mapping with data transforms. This mapping is between the clipboard and the format required by the protocol.
-		The application sends the request to the external system.
-		The application receives the protocol-specific response. The response data is parsed using the mapping rules specified in the connector rule and placed on the integration clipboard pages.
-		The connector is finalized and returns control to the data page or activity.
+	The connector is initialized based on its type. The type is the protocol the connector supports.
+	The connector maps the request data to the protocol-specific format using the mapping rules specified for the connector. Do not confuse this mapping withdata transforms. This mapping is between the clipboard and the format required by the protocol.
+	The application sends the request to the external system.
+	The application receives the protocol-specific response. The response data is parsed using the mapping rules specified in the connector rule and placed onthe integration clipboard pages.
+	The connector is finalized and returns control to the data page or activity.
 	Finally, a data transform maps the response data from the integration clipboard data structure to your application.
 The supported connector types are?
 	SOAP
@@ -831,8 +820,8 @@ The supported connector types are?
 services
 	facilitate integration
 	allow you to expose
-		data
-		functionality
+	data
+	functionality
 for services you must provide
 	data mapping for outbound and inbound content
 service listener
@@ -850,10 +839,8 @@ What are the supported service types?
 the only thing a connector rule can touch is
 	the data pages and mapping rules
 What is the difference between a connector and a service?
-	a connector is the role of client
-		request data or services from another system
-	service is the role of server
-		respond to requests from another system
+	a connector is the role of client, requests data or services from another system
+	service is the role of server, responds to requests from another system
 You are updating a system of record using a SOAP connector. If the system of record is unavailable, you want to retry after an hour. If it is still unavailable after an hour, a notification should be sent to a system administrator. How do you implement this requirement?
 	Implement the logic in the connector’s error handler flow.
 Which two statements describe the role of the cache manifest in a mobile app? (Choose two.)
@@ -892,12 +879,7 @@ A requirement states that the Users role cannot open a purchase request during t
 What are two consequences of exposing columns for reporting? (Choose two.)
 	Backward chaining declare expressions cannot use exposed properties.
 	Tables require additional space due to additional columns.
-Timesheets require the following approvals:
-	> Regular 40 hours -> Supervisor of employee
-	> Any overtime -> Manager of Supervisor
-	> Worked on weekend -> VP Finance
-	> Negative time-off balance -> HR Director
-Which two conditions require an authority matrix? (Choose two.)
+Timesheets require the following approvals: Regular 40 hours -> Supervisor of employee Any overtime -> Manager of Supervisor Worked on weekend -> VP Finance Negative time-off balance -> HR Director. Which two conditions require an authority matrix? (Choose two.)
 		Negative time-off balance -> HR Director
 		Worked on weekend -> VP Finance
 A service receives a request to assign an office to a new employee. The service rejects the username and/or password provided. What type of fault condition do you configure to return an appropriate response?
@@ -1088,8 +1070,8 @@ What ruleset does pxErrorHandlingTemplate belong to?
 	the base class
 All connectors have what?
 	an error handling flow that is automatically
-		invoked if the error is not detected by another mechanism, and is always
-			enabled
+	invoked if the error is not detected by another mechanism, and is always
+	enabled
 To handle errors from connectors used with data pages, use a
 	response data transform to detect errors as part of the data page load. Use a
 		when condition to check for any error messages on the page and if there are apply
@@ -1134,7 +1116,6 @@ which ruleset contains assignment routing data?
 What are the two records to identify the database table a class is mapped to?
 	Database
 	Database Table
-
 In class mapping the Database records identify how
 	Pega connects to a specific database for the named database
 In class mapping the Database Table records identify
@@ -1188,7 +1169,6 @@ To configure keyed data pages:
 	Select Access pages with user defined keys.
 	If you want the data page to return more than one instance, select Allow multiple pages per key to filter a large list to create a smaller list.
 	Specify the Page list keys used to access the list entry or list entries. 	To specify multiple keys, select Add key.
-
 Data access patterns are simple …?
 	mechanisms to manage data
 What are the three types of data access patterns?
