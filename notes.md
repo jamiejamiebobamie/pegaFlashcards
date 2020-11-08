@@ -567,7 +567,7 @@ To configure a Pega portal:
 	customize the branding of the portal
 	customize the content and tools available to users
 	configure an access group to reference the portal if
-		necessary.
+	necessary.
 Portal records are listed in
 	the User Interface category in both the Records Explorer and the Create menu.
 Portal records are classless and do not appear
@@ -588,9 +588,8 @@ default user portals are organized with:
 	a content pane
 how do you modify the contents of a section?
 	use Live UI to identify and open the section to change it
-to create a new layout for a portal you should
-	create a new harness in the Data-Portal class and add a section layout to the portal. But what must you reference on the Details tab of the portal record after doing this?
-		the new harness
+to create a new layout for a portal you should create a new harness in the Data-Portal class and add a section layout to the portal. But what must you reference on the Details tab of the portal record after doing this?
+	the new harness
 Skins contain instructions for
 	formatting UI elements
 Where do you go to apply a skin to a portal, rather than reusing the application skin?
@@ -696,8 +695,8 @@ To implement the PegaWAI ruleset
 	select the Enable accessibility add-on check box.
 How does Dynamic UI differ from responsive UI?
 	Dynamic UI is
-		what elements appear on the form, while Responsive UI:
-		how form elements align and shift
+	what elements appear on the form, while Responsive UI:
+	how form elements align and shift
 Where do you configure Dynamic UI
 	in the section rules
 To configure Dynamic UI
@@ -880,8 +879,8 @@ What are two consequences of exposing columns for reporting? (Choose two.)
 	Backward chaining declare expressions cannot use exposed properties.
 	Tables require additional space due to additional columns.
 Timesheets require the following approvals: Regular 40 hours -> Supervisor of employee Any overtime -> Manager of Supervisor Worked on weekend -> VP Finance Negative time-off balance -> HR Director. Which two conditions require an authority matrix? (Choose two.)
-		Negative time-off balance -> HR Director
-		Worked on weekend -> VP Finance
+	Negative time-off balance -> HR Director
+	Worked on weekend -> VP Finance
 A service receives a request to assign an office to a new employee. The service rejects the username and/or password provided. What type of fault condition do you configure to return an appropriate response?
 	Security error
 A class group is used to.
@@ -1052,14 +1051,14 @@ What are the two types of errors that can occur when using a connector?
 What do you do with transient errors?
 	post a note to alert the end user that the integration failed
 	ask the user to retry at a later time or
-		connection can be automatically retried.
+	connection can be automatically retried.
 What do you do with permanent errors?
 	write the details to a log file so that errors can be investigated and fixed
 	implement a process for the investigation and fixing
 How are connector errors detected?
 	depends on how the connector is invoked. Connectors can be invoked by
-		data pages and
-			activities.
+	data pages and
+	activities.
 pxErrorHandlingTemplate is…?
 	a template data transform for handing errors
 pxErrorHandlingTemplate is used to create
@@ -1074,28 +1073,28 @@ All connectors have what?
 	enabled
 To handle errors from connectors used with data pages, use a
 	response data transform to detect errors as part of the data page load. Use a
-		when condition to check for any error messages on the page and if there are apply
-			the reusable error handling data transform
+	when condition to check for any error messages on the page and if there are apply
+	the reusable error handling data transform
 If a connector error is not detected in the data page or the activity, then the
 	error handler flow for the connector is
-		invoked to detect the error.
+	invoked to detect the error.
 If there is an immediate need for a response from a connector and there is an error, you should?
 	Display an error message, and
-		write the error to the log file
+	write the error to the log file
 When an error occurs, the original flow execution is
 	paused and control is handed over to
-		the error handler flow.
+	the error handler flow.
 The Pega API provides a
 	standard set of services, like new case …
-		creation, assignment…
-			processing, access to
-				data pages, and even get
-					documentation
+	creation, assignment…
+	processing, access to
+	data pages, and even get
+	documentation
 The Pega API uses built-in
 	REST/JSON services
 You called the Pega API REST/JSON services using
 	standard HTTP methods:
-		GET, POST, or PUT
+	GET, POST, or PUT
 To expose your application create a
 	SOAP web service
 CreateNewWorkResponse is an
@@ -1152,7 +1151,7 @@ association rules are great because they can…
 	be reused in any report (unlike a class join)
 Subreports enable you to
 	reference results from any report definition in
-		a main report
+	a main report
 Subreports allows you to satisfy
 	complex reporting requirements.
 Subreports can be created in two ways. What are they?
@@ -1160,8 +1159,8 @@ Subreports can be created in two ways. What are they?
 	aggregation
 keyed data pages save
 	information from
-		an outside server / database onto
-			a data page in the application in a [key:value] pair
+	an outside server / database onto
+	a data page in the application in a [key:value] pair
 keyed data pages are good for information that
 	doesn’t change frequently and is accessed frequently.
 To configure keyed data pages:
@@ -1173,19 +1172,17 @@ Data access patterns are simple …?
 	mechanisms to manage data
 What are the three types of data access patterns?
 	system of record
-		which option in the Data Access section?
-			Refer to a data page option
+	which option in the Data Access section?
+	Refer to a data page option
 	snapshot
-		which option in the Data Access section?
-			Copy data from a data page option
-reference
-		which option in the Data Access section?
-			None! To implement reference a data page from a record other than a
-				property. The data will reload according to
-					the refresh strategy specified on the data page
+	which option in the Data Access section?
+	Copy data from a data page option
+	reference
+	which option in the Data Access section?
+	None! To implement reference a data page from a record other than a property. The data will reload according to the refresh strategy specified on the data page
 The system of record data access pattern is always
 	current and reloads
-		according to the refresh strategy specified
+	according to the refresh strategy specified
 The snapshot data access pattern is only
 	current as of when data was copied
 The reference data access pattern uses data without
@@ -1196,7 +1193,7 @@ Obj- methods using activities allows for advanced processing to
 	a database
 Obj- methods using activities is basically a series of
 	steps:
-		operations on the database
+	operations on the database
 Obj-Open or Obj-Open-By-Handle
 	loads and instance of a class stored in externally
 	creates a clipboard page of the opened instance
@@ -1210,9 +1207,9 @@ Obj-Refresh-and-Lock
 	refreshes data page if stale
 Obj-Save
 	if the WriteNow parameter is selected
-		saves contents of a clipboard to the database only used for immediately rereading an instance before a commit
+	saves contents of a clipboard to the database only used for immediately rereading an instance before a commit
 	if the WriteNow parameter is NOT selected
-		operation becomes a deferred save.
+	operation becomes a deferred save.
 Obj-Save-Cancel
 	cancels the most recent uncommitted Obj-Save method so that the instance is not written as part of a later Commit operation.
 Rollback method
@@ -1224,8 +1221,7 @@ Obj-Delete-By-Handle
 	deletes an instance using its unique ID without requiring a page on the clipboard
 	removes an instance from the database
 Symbolic indexes are used to
-	access items in a page list without using explicit
-		indices.
+	access items in a page list without using explicit indices.
 Symbolic index: <APPEND>
 adds an element to the end of a value list or page list property
 Symbolic index: <PREPEND>
@@ -1244,10 +1240,10 @@ What does the the Access Manager simplify?
 	the configuration of security records
 What are the three tabs in the Access Manager?
 	Work & Process tab
-		controls access to instances of a specific case type		
+	controls access to instances of a specific case type
 	Tools tab
-		controls access to tools such like the Clipboard and Live UI for end users
-Privileges tab
+	controls access to tools such like the Clipboard and Live UI for end users
+	Privileges tab
 	controls access to records like flow actions and correspondence records.
 What are the three levels of access?
 	Full Access
@@ -1257,26 +1253,26 @@ Apply / Configure Access of Role to Object and Access Deny records to
 	automatically revoke access to actions and tools as the application advances towards production.
 An Access of Role to Object record grants
 	access for action on a scale of
-		0 to 5.
-			A zero means
-				the action is denied. The remaining ratings are compared to
-					the production level value of your system.
+	0 to 5.
+	A zero means
+	the action is denied. The remaining ratings are compared to
+	the production level value of your system.
 An Access Deny record denies
 	access for an action on a
-		0 to 5 scale. A zero means the action is
-			allowed.
+	0 to 5 scale. A zero means the action is
+	allowed.
 Production level values follow the software development life cycle. The greater the production level value, the…
 	closer the system is to a production environment.
 An Access When record conditionally
 	allows access to an action, tool, or privilege and returns
-		true/false, if access is granted
+	true/false, if access is granted
 What are the three access processing roles?
 	users
 	managers
 	administrators
 an Access Role Name record defines
 	an access role, a specific set of
-		application users with a unique job function
+	application users with a unique job function
 What two records identify the actions allowed or denied to users assigned a given role?
 	Access of Role to Object (ARO)
 	Access Deny
@@ -1298,12 +1294,12 @@ each access group can only reference…?
 	one application.
 An access group
 	specifies the portal or portals that members of the access
-		group use to perform work
+	group use to perform work
 	identifies a default portal to present to users upon login
-		remaining portals are available from the Operator menu
+	remaining portals are available from the Operator menu
 	identifies the access roles granted to members of the group
 	identifies the types of cases that members of the group can
-		create and process
+	create and process
 A work pool is a set of
 	case types a user can work on in an application
 A work pool corresponds to
@@ -1317,7 +1313,7 @@ Access control for work queues are…?
 	role-based
 What is default@pega.com?
 	the last resort for routing. used when
-		no other more specific or local work queue can be found.
+	no other more specific or local work queue can be found.
 What are the two levels of access control for attachments?
 	a privilege
 	when condition
@@ -1396,15 +1392,15 @@ Rules with Application Validation mode can have
 	codependent rulesets within the same application
 Ruleset Validation mode defines one or more
 	ruleset versions on which the…
-		ruleset version depends
+	ruleset version depends
 In Ruleset Validation mode only rules in
 	the ruleset versions that are specified as
-		prerequisites (and their prerequisites) can be
-			referenced from the ruleset
+	prerequisites (and their prerequisites) can be
+	referenced from the ruleset
 In Ruleset Validation mode if your ruleset version does not have any prerequisite ruleset versions you need to specify the
 	base product ruleset
-		Pega ProcessCommander as
-			a prerequisite
+	Pega ProcessCommander as
+	a prerequisite
 The Pega-ProcessCommander ruleset lists
 	all product rulesets
 In Ruleset Validation mode ruleset prerequisites cannot be
@@ -1413,7 +1409,7 @@ True or False? You can mix rulesets that use AV and RV.
 	True
 In Ruleset Validation mode the prerequisite ruleset is listed in
 	brackets
-		MyCoPL [MyCo]
+	MyCoPL [MyCo]
 rulesets with brackets use
 	Ruleset Validation
 rulesets without brackets use
@@ -1441,7 +1437,7 @@ if rules are checked out what appears at the top of a ruleset list?
 	a personal ruleset. It has the name of the operator ID and contains the rules checked out by the operator.
 What does the Lock and Save button do on a ruleset list?
 	It locks a ruleset to prevent changes, stopping you from
-		adding or updating rules in a locked ruleset.
+	adding or updating rules in a locked ruleset.
 when you check out a rule, you are create
 	a private copy of the rule to modify and test
 when is the the private edit button displayed?
@@ -1484,12 +1480,10 @@ the contents of a product rule are put into a ZIP archive file called…
 	a RAP file
 a RAP file
 	is a zip file that consists entirely of:
-		XML documents in Unicode characters
+	XML documents in Unicode characters
 to create an a RAP file
 	create a product rule:
-		identifies the components you want to include in the
-			archive file
-	create an archive file:
+	identifies the components you want to include in the archive file
 To make sure everything is complete and correct for migration, before you create an archive file you should do what things?
 	Do not lock delegated rulesets
 	Associate your data records with rulesets.
@@ -1574,14 +1568,13 @@ the cache manifest provides
 	a list of the files needed for the mobile app to work offline
 the cache manifest is
 	a simple text file defined using an HTML rule form named
-		pyCustomAppCache
+	pyCustomAppCache
 Each line of a cache manifest refers to
 	a single static resource such as an HTML file, an image file, a CSS file, a font file, or a JS file.
 To define the cache manifest, save a copy of
 	the pyCustomAppCache record to your application ruleset.
-Do not change the context of your copy of pyCustomAppCache.
-the pyCustomAppCache record must be applied to
-	the Data-Portal context / ruleset.
+	Do not change the context of
+	your copy of pyCustomAppCache. the pyCustomAppCache record must be applied to the Data-Portal context / ruleset.
 To add a comment to the cache manifest, start the line with the
 	# (octothorp) character.
 Offline rule access is supported by
@@ -1594,7 +1587,7 @@ Where do update the whitelists and blacklists for a mobile application?
 	on the Offline rules tab of the Mobile: Offline Configuration page. To access the Mobile: Offline Configuration page, in Dev Studio, from the Configure menu, select Mobile > Offline.
 By default, offline mobile app synchronization includes the rules that are
 	explicitly referenced in the UI or process and excludes rules
-		with obscured references.
+	with obscured references.
 The following table lists other rule types and if they are included in synchronizations.
 How many customizable whitelists does Pega provide?
 	five
@@ -1624,8 +1617,8 @@ What is one way to improve the performance of an offline-enabled application usi
 How do make a large data page?
 	using the standard data page record type
 	then declaring it as a large data page by
-		adding it to the pyDataPageWhiteListForOffline rule
-			add the name of the data page followed by ;large.
+	adding it to the pyDataPageWhiteListForOffline rule
+	add the name of the data page followed by ;large.
 Using the offline localization feature available in an offline-enabled mobile app, end users can switch languages by tapping
 	a language option in the language list.
 You use the offline localization feature to create
@@ -1640,6 +1633,6 @@ Requestor pooling
 	eliminates server wait time for requestor creation.
 What are the two categories for requestors associated with a pool
 	Idle requestors
-		currently in the pool, waiting for a service request.
+	currently in the pool, waiting for a service request.
 	Active requestors
-		currently out of the pool, managing service requests.
+	currently out of the pool, managing service requests.
