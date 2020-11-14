@@ -91,7 +91,7 @@
              window.addEventListener("resize", this.handleResize);
             }
           render() {
-            let message, buttonStyle, divStyle, children, term, elements, color;
+            let message, buttonStyle, divStyle, children, term, elements, color, topPercentageOfCardNumbers;
             let terms = []
             // landscape mode - > determines the flashcard and button layout / styling.
             if (this.state.windowWidth>this.state.windowHeight) {
@@ -108,6 +108,7 @@
                              e('div',{style: {margin:"1vw",width:"100%",height:"100%",overflow:"scroll",paddingLeft:"3vw",paddingRight:"3vw",borderStyle:"dashed"} },terms),
                              e('div',{style: {display:"flex",justifyContent:"space-around", flexDirection:"column"} }, e('button',{style:buttonStyle, onClick: this.decrementCardIndex},"<-"), e('button',{style:buttonStyle, onClick: this.incrementCardIndex},"->")),
                             ]
+                topPercentageOfCardNumbers = "90%"
             // portrait mode - > determines the flashcard and button layout / styling.
             } else if (this.state.windowWidth<=this.state.windowHeight) {
                 message = 'portrait.';
@@ -123,6 +124,7 @@
                              e('div',{style: {display:"flex",justifyContent:"center"} }, e('button',{style:buttonStyle, onClick: this.decrementDefinitionIndex},"-"), e('button',{style:buttonStyle, onClick: this.incrementDefinitionIndex},"+")),
                              e('div',{style: {display:"flex",justifyContent:"space-around"} }, e('button',{style:buttonStyle, onClick: this.decrementCardIndex},"<-"), e('button',{style:buttonStyle, onClick: this.incrementCardIndex},"->")),
                            ]
+                topPercentageOfCardNumbers = "95%"
             }
             // top-level page elements
             elements = [
@@ -132,7 +134,7 @@
                             { style:
                                 {
                                     position:"absolute",
-                                    top:"90%",
+                                    top:topPercentageOfCardNumbers,
                                     left:"4%",
                                     fontSize:"3vw",
                                     color:"black"
@@ -146,8 +148,8 @@
                             { style:
                                 {
                                     position:"absolute",
-                                    top:"90%",
-                                    left:"90%",
+                                    top:topPercentageOfCardNumbers,
+                                    left:"88%",
                                     fontSize:"3vw",
                                     color:"black"
                                 }
@@ -158,7 +160,7 @@
                         e( 'div', divStyle, ...children
                         )
                     ]
-            return e('div', null , ...elements );
+            return e('div', {style: {margin:"auto",maxWidth:"1000px"} } , ...elements );
           }
         }
         const domContainer = document.querySelector('#reactHolder');
