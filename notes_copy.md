@@ -1,3 +1,1263 @@
+Low-code environments usually employ what techniques instead of writing code?
+	Visual, declarative techniques.
+Pega is “Software That Writes
+	Your Software”
+Pega Express delivers a
+	Minimum Loveable Product (MLP) …love immediately rather than simply functional (minimum viable product).
+Pega Express breaks the customer journey into
+	microjourneys that drive the organization to achieve a given customer goal
+The three pillars of a great application are
+	microjourneys,
+	cases, and
+	strategies
+What are personas?
+	who interacts with the application
+What are channels?
+	how they interact with it
+What is data in a microjourney?
+	the information that the microjourney interacts with
+What are microjourney interfaces?
+	where the data comes from/where it persists.
+A workspace is
+	an environment that provides specific tools and features. Pega four role-based workspaces, known as studios:
+	App Studio
+	Dev Studio
+	Prediction Studio
+	Admin Studio
+Each Studio consists of three areas:
+	header
+	center space
+	navigation panel
+Pega Platform applications are made up of instructions, called
+	rules, that govern
+	application behavior.
+The App Studio overview displays
+	an Application Layers section,
+	a visual representation of the
+	rules that make up the application.
+Layers define
+	where rules reside and
+	where rules are maintained.
+App Studio provides
+	core features for application development, such as
+	case design,
+	data management, and
+	user experience.
+A case type is
+	an abstract model of a business transaction.
+Case types model
+	repeatable business transactions.
+A case is a
+	specific transaction instance.
+The case life cycle design modeling technique enables business users to
+	see and interact with a case the same way they think about it: stages -> processes -> steps.
+A step is
+	an action or task performed by the system or users.
+Parallel processes are
+	processes that are part of the same stage and can be done in any order and/or at the same time.
+Change stage steps
+	manually change the stage the user is on to a specific stage.
+Primary stages make up the
+	happy path and are
+	the stages a typical case takes towards the expected outcome.
+A multi-step form represents
+	a single assignment completed by a single user. It is a guided, linear workflow using related UI screens.
+The case status indicates
+	the case progress towards resolution. You can set the case status on
+	any stage and any step in the case life cycle.
+Standard case status values include:
+	Open,
+	Pending-Approval, and
+	Resolved-Completed. You can also add
+	custom status values.
+Step instructions identify
+	what users must accomplish in that assignment. Add instructions to steps that
+	require users to enter information.
+A service-level agreement (SLA) establishes
+	a work completion deadline. Organizations often establish service-level agreements to
+	enforce on-time performance.
+	SLAs -> [
+	start,
+	goal,
+	deadline], past-deadline
+Urgency is
+	a numeric value that brings visibility to
+	unresolved work in your application.
+An assignment SLA has a default urgency of
+	10. For each interval, you define a value between 10 and 100 by which to increase the initial urgency.
+The maximum urgency for an SLA is
+	100.
+The Pega Platform Get Next Work functionality assigns high-urgency
+	tasks before low-urgency tasks to ensure that assignments finish on time.
+Escalation actions are
+	actions that your application takes to facilitate faster resolution times, based on a
+	specified service-level agreement.
+When you create a data element, you assign it to
+	a field type.
+Simple field types are
+	Text (single line),
+	Text (paragraph),
+	Boolean,
+	Currency,
+	Date & time,
+	Decimal,
+	Integer,
+More complicated field types are called
+	fancy fields. 
+Fancy field types include
+	Attachment,
+	Location,
+	User Reference.
+Views, also referred to as
+	forms, display
+	the fields necessary to
+	complete the current assignment.
+An application can make stored data available for
+	editing or
+	present the data as
+	read-only in the View.
+Data types are
+	collections of case data and provide a way for developers to
+	group a set of fields to
+	describe a single object.
+The collection of case types and data types in your application holistically
+	defines your data model.
+A data type consists of
+	one or more single-value fields,
+	lists, or
+	groups of fields.
+Data types can group objects, such as
+	views and other rules that are created by more advanced developers.
+True or false? Data types can reference other data types.
+	True
+Data types are
+	templates that you can use anywhere in your application.
+You can create data types to
+	reuse assets from an existing data type through inheritance.
+You can source data types
+	locally from a Pega Platform system of record, or from
+	an external system of record.
+If a data type only partially meets your needs, you can
+	extend that data type.
+Field groups and field group lists can be used to create
+	relationships between single-value data objects.
+A field group is a
+	single entity that contains multiple fields.
+A field group does not
+	store data itself but instead acts as a container to associate a set of related fields.
+A field group list is
+	a list of field groups, or grouped values.
+A data type defines
+	the fields in a field group or field group list and serves as
+	the template for creating the field group or field group list.
+A calculation expresses a
+	relationship between fields by setting the value of a calculated field based on one or more input fields. Calculation occurs whenever users
+	update the value of an input field.
+Defining a field calculation reduces
+	the chance for error and improves
+	process efficiency by eliminating the need for manual calculation.
+App Studio allows two types of calculations:
+	functions and
+	custom calculations.
+Functions operate on field group lists. There are four functions:
+	sum of
+	average of
+	maximum of
+	minimum of
+Custom calculations calculate the field value by
+	using any number of other simple or fancy field values.
+When you configure a custom calculation, you reference fields by name using
+	the period character (“.").
+To identify the relationships between fields, Pega Platform establishes and updates a
+	network of calculations for an application. When you define a field calculation, Pega Platform adds
+	that calculation to the calculation network.
+Data records provide
+	values for
+	the fields associated with a particular
+	data type and can be stored
+	outside the case.
+Data records define permissible values for
+	data fields. Limiting the input values to valid options reduces
+	errors and allows for
+	automation.
+Generally, a change to data record values does not need an
+	associated change in the business process to support the change. Whereas, a change in the data type fields represents
+	a change in the business processes.
+A local data storage lets you
+	store data records for a data type, without
+	having to create or maintain database tables. Data records stored using a local system of record can be
+	packaged and distributed as part of an application.
+You can retrieve data from external database storage by using
+	connectors.
+Data views represent
+	instances of how your application uses
+	data and defines
+	the data associated with a data type. They provide links between
+	data records and your application. It allows an application to
+	populate a data reference with source data without the developer knowing
+	anything about how or where the data is stored.
+Pega Platform provides three data views for any data type configured to connect to a system of record:
+	List _ data view displays all the data records
+	the _ data view returns a single record
+	the Savable _ data view allows a case to save a single record to the system of record
+Simulated data views do not have
+	an associated data source.
+You must configure the connection to a data source before the data view is ready for
+	production however you can use
+	a simulated data source during application development.
+use the Pega Robotic Process Automation (RPA) when an external system does not have
+	an API for sharing data, or has
+	an API that you cannot access, or has an API that is
+	insufficient
+Pega Robotic Process Automation in attended mode.
+	Attended RPA refers to automation that works alongside
+	a human involved in the process.
+unattended RPA mode uses a queue for processing later and offers the advantage of
+	optimizing system resources and reduces peak loads.
+Pega Robot Manager is a
+	control tower application for the Pega Robotic Process Automation that
+	helps manage and provides insight into robot performance, providing performance analytics for all robots and allowing you to
+	monitor and schedule RPA robots
+Case assignments should go
+	to the individual or group of individuals most capable of completing a specific assignment.
+You use assignment routing to
+	assign work to the most appropriate user. You can route a step to
+	a single user or to a team of users.
+A worklist is
+	a list of all open assignments, in order of importance, for a specific user.
+A work queue is
+	a list of all open assignments, in order of importance, for a group of users.
+Assignments stay in a work queue until
+	a user associated with the work queue selects the assignment, or
+	a manager sends an assignment in the work queue to a specific user.
+A work group identifies
+	a cross-functional team that contains a manager, users (operators), and a work queue.
+Pega refers to work groups as
+	teams and operators as
+	team members.
+You can also use business logic routing when you want to
+	route work based on certain conditions.
+Case approvals are
+	decision points at which one or more users decide whether to approve or reject a case.
+You configure approvals in Pega Platform by using
+	the Approve/Reject step. To configure an Approve/Reject step, you define
+	who is assigned the approval
+	how the case proceeds if the case is approved or rejected. You configure the
+	Approve/Reject step routing and flow.
+By default when the assignment is rejected, the case status changes to
+	Resolved-Rejected.
+Case participants are
+	people, businesses, and organizations that are involved in a case. Default participants:
+	Owner,
+	Customer,
+	Participants
+user reference fields are
+	defined in the case type and the associated data types.
+With a send email step, you automatically send
+	and email to the selected parties. Another option is
+	to configure email notifications at the case level. This allows you to automatically send a notification when
+	an assignment in the case is routed to a user worklist.
+Use Agile Workbench to
+	create and update
+	user stories,
+	bugs, and
+	feedback items
+The Agile Workbench captures
+	real-time feedback about your application and tracks
+	feature development
+Direct Capture of Objectives (DCO) is
+	the process of defining and managing business objectives in your application. Makes development more
+	efficient
+In the Agile workbench work items have a status of either
+	To do, Doing, or Done
+In the Agile workbench, The Project Overview displays
+	all the features and work items, as well as their status, in your application
+Optional actions are
+	actions that users optionally perform during case processing. May also be
+	common case processing actions that may be
+	invoked at varying times during the case
+you can make optional actions available
+	at any time during a designated stage, or
+	at any time in the entire case.
+An optional action requiring a series of steps is
+	an optional process.
+Built-in case wide optional actions include
+	Change Stage and
+	Transfer Assignment
+Optional actions allow customer service representatives (CSRs) to perform
+	out-of-sequence tasks that do not influence
+	the main events in the case life cycle
+Automating decisions based on business logic allows application users to
+	focus on more nuanced decisions that require
+	human expertise.
+A flow is
+	a sequence of events that models a business process. You create flows to
+	support the different paths that users can take through a case life cycle.
+You define paths in a flow by
+	using graphical shapes and connectors. The shapes and settings that you choose depend on
+	the types of decisions that users make, and the order in which the events occur.
+Use a Decision shape to
+	add a conditional path to a flow or model
+	more complex use cases. By defining the events that cause your flow to follow different paths, you can create cases that support
+	more than one outcome.
+Decision shapes are configured to
+	advance a workflow automatically. An automated decision evaluates
+	business logic or a set of one or more conditions
+You can define conditions that control whether
+	a process or stage runs in a case. A condition consists of
+	a field,
+	comparator, and
+	value. Processes and stages are either
+	executed or
+	skipped if
+	the case run-time values match the conditional logic defined
+True or false? You can add more than one condition to a stage or process.
+	True
+multiple cases are good for when you have
+	complex business transactions
+you can model case relationships with
+	a case hierarchy that contains
+	top-level cases and
+	child cases
+A parent case that creates multiple child cases allows for
+	work to be processed in parallel. Different
+	parties with different
+	expertise can handle each child case. When processing child cases in parallel, the parent case may need to wait until a child case is complete before the parent case can be resolved.
+Child cases are beneficial in situations where you want to: 
+	Model work that different parties perform
+	Model work that follows different reporting options 
+	Model work that follows different time frames
+	Model work that is common to multiple case types
+Implementing a business process in a separate case type allows you to
+	reuse the case type as needed.
+To add a child case to a case type, add a
+	Create Case automation step to the case life cycle. When encountering the Create Case step, Pega Platform creates
+	an instance of the specified case type.
+A child case cannot be
+	a temporary case, because the parent case
+	refers to the child case by its case ID. Temporary cases are not assigned a case ID.
+When creating a child case, you can specify
+	the information to copy from the parent case to the child case through a process known as
+	propagation where you
+	identify the fields in the parent case to copy from and copy the values to fields identified in the child case. This is performed
+	on the Create Case step.
+In child case creation, data propagation is appropriate if
+	the data in the child case should represent the data at the time of the child case creation.
+In child case creation, if the information should remain synchronized with the parent case, and the data may change on the parent case, then it is more appropriate to
+	reference the data in the parent case.
+The Wait step allows you to
+	pause and resume case processing when the case meets conditions that you define
+The Wait step can be configured to pause case processing based on
+	Wait type:
+	Case Dependency or
+	Timer.
+The Wait step Case Dependency wait type pauses case processing of
+	a parent case until
+	the child case dependency resolves.
+In a child case creation a dependency is created when you add
+	a Wait step to the parent case. When a parent case reaches the Wait step, the case pauses until
+	all child cases or
+	any child case of a given type reach a defined status.
+For a wait step to be effective, there must exist
+	a hierarchical relationship between cases, such as parent and child cases.
+For a wait step, the Timer wait type pauses a case until
+	the Set date/time interval expires or until
+	a Reference date/time is reached.
+The Integration Designer is
+	a single location in
+	App Studio for viewing
+	all the data objects,
+	data views,
+	object dependencies, and
+	external systems in an application and allows you to see how
+	these entities are connected.
+The Visual Data Model is
+	a diagram that provides visibility into
+	the application's data model and how
+	the entities are related. Can update, add, and delete fields from the model.
+The Integration Landscape
+	is a diagram of
+	the data objects,
+	cases, and
+	systems of record in the application and where
+	they are sourced.
+Business logic validations are separate from
+	the fields that capture data
+Configure business logic validations on
+	a form. validation is triggered when
+	users submit the form.
+True or false. You can use business logic validation on a stage.
+	True. This checks that all the correct data has been entered or generated before
+	the case enters a specific stage
+The Report Browser
+	is a tool to create
+	new reports,
+	organize, run, and share reports as well as
+	manage report categories.
+Reports in the Report Browser are organized by
+	category.
+In the Report Browser a category is
+	an organizational framework
+	a label and an owner type that exposes the category to
+	a specific audience:
+	an individual user,
+	a group of users, or
+	all users.
+Can configure a report to specify
+	the data from each record that you want to include in the report. The report retrieves the data from a
+	database and returns
+	the results in a
+	table of
+	columns and rows.
+The Columns of a report define
+	the content of the report.
+In a report you cannot display what in a column?
+	a field group
+What can you use in columns to make reports more useful?
+	calculations, also known as
+	functions
+Calculations (or functions) in reports enable you to
+	calculate results derived from data in the database.
+By default, report queries return
+	all the records that contain data from all the columns as a result you may want to use a
+	filter
+In reports, a filter defines
+	a test applied to each
+	record to determine
+	whether the record contains
+	data your users need.
+In reports, filters compare a
+	data value in the record against a
+	defined condition. If the comparison result is true,
+	the report includes the record. If the comparison result is false,
+	the record is omitted.
+In a filtering condition, the comparison can be
+	an explicit value or
+	the value of a property or field.
+In a report filter, testing values that are greater than a specified threshold, like a date is an example of a
+	more complex conditions such as.
+In report filters, symbolic dates let you
+	select time periods or dates without having to build functions.
+You can create a complex filter to capture multiple filtering conditions in a report by adding
+	AND/OR conditions.
+Customers interact with organizations through a variety of
+	channels. A channel is
+	a messaging service,
+	voice service,
+	web portal or
+	mobile portal.
+Channels are created from
+	templates that include
+	predefined layouts and
+	navigation for use in your application.
+True or false? Users can use Pega Intelligent Virtual Assistant and Pega Email Bot to interact with your application, provided you construct the correct channels?
+	True
+The Channels landing page allows you to
+	create, view, and, edit all types of channel interfaces. You can download new components from the
+	Pega Marketplace as well.
+The Lock icon on a channel indicates
+	that the channel component is not yet added to the application.
+A portal is
+	a web channel in use by your application. End users experience the portal through
+	a browser, regardless of device type (such as a
+	desktop or
+	mobile device).
+A portal allows
+	simple and intuitive authoring of an application web channel.
+Pega Platform has two portals for
+	the two most common roles:
+	case manager and case worker.
+The Case Manager portal provides a
+	standard user interface for
+	viewing and working on cases.
+The Case Manager portal displays a
+	case and all nested subcases and tasks, as well as the
+	associated users and roles.
+The Case Worker portal is intended to be used by
+	end users on desktop and mobile devices.
+A portal is made up of
+	pages that consolidate
+	information for easy access.
+To build an application that matches your users' needs, you create pages with
+	fields, controls, and resources presented as images and text.
+Pages added to a portal are also added to
+	the portal's navigation menu.
+By managing a portal’s list of pages, you can customize the
+	primary navigation menu, and improve
+	navigation and user experience.
+What are the two types of portal pages:
+	dashboards and standard pages.
+Dashboards are
+	pages that are customizable by end users.
+Dashboards are made up of
+	widgets that consolidate
+	summary information and (KPIs)
+	Key Performance Indicators from different sources and present it in an
+	actionable format.
+Standard pages are
+	pages built as part of the application and are not
+	customizable by end users.
+Standard pages are typically built as a
+	landing page to navigate to listed objects.
+By default, Pega Platform includes what pages on a navigation menu?
+	the Documents,
+	Pulse, and
+	Reports pages.
+The layout of a dashboard is defined by a
+	template that divides the workspace into
+	slots. Slots are
+	containers for one or more
+	widgets, which are
+	elements of the user interface that display information about the application and KPIs.
+Use roles to
+	organize the users of an application to manage
+	application security and
+	assignments.
+A user’s role defines
+	how the user
+	interacts with the application.
+Associate users with a role to determine
+	the user interface,
+	page permissions, and
+	routing available to users to perform the tasks needed to process a case
+User interfaces are also referred to as
+	channel interfaces.
+Work queues are lists of
+	all open assignments for
+	a group of users.
+Assignments are
+	tasks that users perform.
+A persona is the
+	business representation of a role. Unlike a role, which only contains the technical details of how a typical user, such as a customer, interacts with an application, a persona provides
+	a holistic view of that typical user
+Organizations may create multiple personas for
+	a single role, such as Customer, to reflect
+	different marketing approaches that may not impact
+	application or case design.
+Pega Platform provides one default persona:
+	Users.
+The user persona represents what?
+	case participants that are responsible for
+	creating and resolving cases.
+When you create a new persona, Pega Platform creates
+	a set of default permissions and
+	a work queue for the persona.
+True or false? Multiple personas can share a channel interface.
+	True.
+A user is an individual who
+	interacts with an application.
+If multiple users are associated with the same role, they
+	interact with the application in the same way.
+True or false? By default, a persona has access to all pages in your application.
+	True.
+Pega Platform™ applications depend on cooperation between two key groups of application developers. They are:
+	Domain experts and
+	implementation experts
+Domain experts include
+	business analysts,
+	citizen developers, and
+	front-end developers
+Domain experts provide
+	valuable insight into processes and
+	user needs.
+Implementation experts include
+	system architects,
+	full-stack developers,
+	database administrators, and
+	security administrators
+Implementation experts provide
+	the expertise needed to address critical use cases that require complex configurations.
+In Dev Studio, implementation experts access rule forms directly to address
+	complex or less-common configuration requirements.
+In App Studio, developers configure rules such as
+	processes,
+	views,
+	correspondence, and
+	service levels for a single
+	case type.
+In Dev Studio, developers access
+	all the layers of an application and can extend the rule scope from
+	a single case type to
+	an application,
+	division, or even
+	the entire organization to create
+	a library of standardized, reusable rules.
+In App Studio: a field. In Dev Studio:
+	a property.
+In Dev Studio: a property. In App Studio:
+	a field.
+In App Studio: a goal and deadline. In Dev Studio:
+	a Service Level Agreement (SLA).
+In Dev Studio: a Service Level Agreement (SLA). In App Studio:
+	a goal and deadline.
+In App Studio: a process. In Dev Studio:
+	a flow.
+In Dev Studio: a flow. In App Studio:
+	a process.
+In App Studio: a data object. In Dev Studio:
+	a data type.
+In Dev Studio: a data type. In App Studio:
+	a data object.
+A data type in Dev Studio correlates to a
+	data object in App Studio.
+Data objects represent the
+	business perspective and are exposed in the
+	case life cycle; data types are the
+	technical implementation.
+Data types are the objects that developers manipulate in
+	Dev Studio.
+Pega Platform generates application code in the background by using
+	the rules that you create.
+In Dev Studio, you can manage how a rule is
+	created, reused, and updated to help maintain the
+	integrity of the rule.
+When you model a case type in a Pega Platform application, you configure the application with instructions to
+	create, process, and resolve a case. These instructions are
+	rules. Rules describe the behavior for
+	individual cases, such as how the user interface is
+	displayed and when work urgency
+	increases.
+Each rule is an instance of a
+	rule type.
+Pega Platform provides many rule types to use as
+	templates for creating a rule.
+The rule type determines the type of
+	behavior modeled by the rule.
+Each rule type models a specific type of
+	behavior, such as automated decisions or UI design.
+A process is modeled by what type of rule?
+	a flow rule
+The use of individual rules makes your application
+	modular. By describing case behavior with modular, task-
+	focused rules, you can combine and
+	reuse rules as needed.
+Versioning is
+	creating a new version of a rule whenever
+	case behavior needs to change.
+True or False? Pega Platform maintains a history of changes to a rule, allowing developers to review the change history and undo changes if needed.
+	True.
+Rule delegation is
+	allowing business users to update
+	case behavior as
+	business conditions change.
+A ruleset is
+	a container for rules
+	identifies, stores, and manages the
+	set of rules that define an application or
+	a significant portion of an application.
+A ruleset version is
+	an instance of a ruleset
+Best practice says you should do what to older versions of a ruleset?
+	lock them.
+You identify rulesets by
+	name and
+	version numbers:
+	Expense: 01-02-03
+A version number consists of
+	three segments:
+	a major version,
+	a minor version, and a
+	patch version.
+The range of numbers for a version number segment runs from
+	01 to
+	99
+When you create an entirely new rule, what is the version number?
+	01-01-01.
+A ruleset stack is
+	a sequence of rulesets.
+A ruleset stack determines
+	the order in which Pega Platform looks through
+	rulesets to find
+	the rule that is in use.
+When you create a rule in Dev Studio, the New Record form prompts you to provide four pieces of information:
+	rule type,
+	identifier,
+	class, and
+	ruleset.
+Developers often secure rulesets to prevent
+	unauthorized or unintended changes to rules.
+Securing a ruleset in Pega Platform helps to
+	maintain the integrity of rules,
+	adds an audit trail, and relies on
+	an explicit action to add and update rules.
+True or false? Deleting rules is possible.
+	True, but you should only delete rules from
+	the current version of an application or ruleset
+The check-out feature is used to manage
+	changes to rules
+The check-out feature is good for for when you have
+	multiple developers working on an application
+The check-out feature allows developers to
+	change a rule while
+	preventing updates from other developers.
+The check-out feature creates a
+	copy of a rule in a ruleset that is
+	visible only to you, called
+	a personal ruleset.
+A personal ruleset contains
+	the rules you have checked out and occupies the
+	top spot in
+	the ruleset stack.
+A personal ruleset overrides
+	rules in the rest of the application.
+A personal ruleset allows you to
+	test your changes to rules without
+	affecting other developers.
+Checking in a rule updates
+	the application ruleset with
+	a new version of the rule.
+When checking in a rule what is sometimes required?
+	Approval. If approval is not required, your changes
+	immediately affect application behavior.
+When updating a rule in App Studio, App Studio automatically manages the
+	check-out / check-in process for you.
+A private edit is
+	a nonexclusive check out of a rule.
+A private edit allows
+	other developers to edit a rule at the same time.
+What appears on the rule form for rules in a locked ruleset
+	a lock icon
+You can discard multiple rules at once by performing a
+	bulk action.
+Pega groups rules into classes according to their capacity for
+	reuse. Each grouping is a class. Each application consists of three class types:
+	Work
+	Integration,
+	Data
+The Work class contains
+	the rules that describe how to
+	process a case or cases, such as
+	processes,
+	data elements, and
+	user interfaces.
+The Integration class contains
+	the rules that describe
+	how the application interacts with other systems, such as
+	the integration assets that connect the application to a customer database or a third-party web server.
+The Data class contains
+	the rules that describe
+	the data objects used in the application, such as
+	a customer data type or order items data type.
+A class can also contain other
+	classes. A class that contains another class is a
+	parent class.
+A class that is contained by another class is a
+	child class.
+A child class can
+	reuse or inherit any of the rules defined for its parent class.
+Classes are organized from
+	most-specific to
+	least-specific in the class hierarchy.
+The class hierarchy determines how
+	developers can reuse rules within the application.
+An application can leverage any rule that is available to an application through the
+	class hierarchy.
+When attempting to identify the rule to use at run time, Pega Platform starts with
+	the most-specific class and expands the search to increasingly general classes.
+TGB-Orientation-Work is a child of the class
+	TGB-Orientation, which is a child of the class
+	TGB.
+Pega Platform™ provides two methods for rule inheritance:
+	pattern inheritance and
+	directed inheritance.
+Pattern inheritance is
+	automatic.
+Pattern inheritance uses
+	the class name structure to determine
+	rules available for reuse.
+Pattern inheritance searches for the rule of interest by following
+	the class hierarchy
+Pattern inheritance searches classes that share
+	a class name prefix.
+Directed inheritance is
+	inheritance between classes where the parent class is
+	explicitly specified.
+You apply directed inheritance to reuse
+	standard Pega Platform rules and rules from
+	other applications
+	outside the business class hierarchy.
+Unlike the automatic use of pattern inheritance, directed inheritance is
+	explicit. You list directed inheritance on the class rule form
+When attempting to reuse rules through inheritance, Pega Platform first searches through the parent classes indicated by
+	pattern inheritance. If unsuccessful, Pega then searches the parent class indicated by
+	directed inheritance as the basis for
+	another pattern inheritance search. This process
+	repeats until Pega reaches the last class in the class hierarchy, called the
+	ultimate base class or
+	@baseclass.
+If a rule cannot be found after searching @baseclass, Pega does what?
+	Returns an error.
+The passed deadline interval defines
+	when to take further action because the step or case is
+	past the deadline. The interval measures
+	the time that has passed since
+	the deadline for a
+	still-open assignment.
+Where is the only place where you can configure the passed deadline interval?
+	in Dev Studio.
+You can configure the passed deadline interval to
+	repeat a fixed number of times, or
+	repeat indefinitely until
+	the user completes the assignment. You can continue to increase
+	the assignment urgency and
+	send an escalation action each
+	time the passed deadline elapses.
+The Create PDF automation does what?
+	Attaches a screenshot of a view to the case in PDF format.
+A cascading approval process configures
+	a series of approvals.
+Two cascading approval models are
+	reporting structure and
+	authority matrix.
+Cascading approvals based on reporting structure require the approval of
+	a user's direct manager and higher.
+Can you configure a cascading approval with a reporting structure to require a specific number of approvals?
+	Yes, you can also configure business logic to set thresholds to determine the number of required approvals.
+If you need to test the values of multiple properties to answer questions such as “What promotional offer should the company offer?”, you can use
+	a decision table.
+Decision tables resemble
+	a spreadsheet with rows and columns.
+Decision tables are a good approach when you use
+	a set of properties or expressions to arrive at a decision.
+The decision table and decision tree rule forms include the ability to test for
+	conflicts and
+	completeness.
+Checking for conflicts in a decision table or a decision tree identifies
+	if your decision rule
+	prevents one or more of its
+	rows or branches from
+	ever being used.
+Show completeness identifies
+	a decision table that has
+	missing conditions or a decision tree that has
+	missing branches. The system adds
+	rows to indicate
+	tests that are missing in the original decision rule
+You can use decision trees to
+	handle logic that returns a result from
+	a set of test conditions.
+Decision trees can evaluate against different
+	test conditions and properties.
+Decision trees contain
+	condition branches, which contain
+	a comparison value,
+	a comparison operator, and an
+	action.
+A decision tree condition action can
+	return a result,
+	continue the evaluation, or
+	stop the evaluation.
+The branches of a decision tree is organized in
+	a hierarchical tree structure.
+In a decision tree, common conditions and results are placed
+	at the trunk of the tree.
+In a decision tree, more-specific conditions and their actions are placed
+	farther down or “at the branches” of a decision tree.
+While processing the rows of a decision tree or table, if the system processes does not reach a returned result, the system returns
+	the final otherwise value.
+While decision tables evaluate against
+	the same set of properties or conditions, decision trees evaluate against
+	different properties or conditions.
+Developers can use a decision table when they have to evaluate
+	many combinations of
+	the same set of properties or conditions to return
+	one value or property.
+Each branch in a decision tree evaluates the property/operator pair against
+	a single value to perform an action, such as
+	return a value or
+	evaluate a nested condition.
+Developers can use a decision tree when they must evaluate
+	conditions on different properties that may be
+	dependent on other conditions.
+You can reference a decision table or decision tree on
+	flow rules,
+	declare expressions,
+	activities, and
+	routers.
+Two cascading approval models:
+	reporting structure and
+	authority matrix
+A cascading approval based on an authority matrix is more
+	flexible than a reporting structure.
+You use the authority matrix model when configuring a process that requires
+	approvals from multiple entities, with at least one entity
+	outside of the reporting structure.
+A work group identifies a
+	cross-functional team that contains a
+	manager and a
+	work queue.
+A work group identifies one
+	operator who is the
+	work group manager.
+The Case Manager portal refers to work groups as
+	teams.
+Work groups can contain Authorized managers to help
+	transfer assignments.
+Cases are collections of
+	data.
+Sources of case data include
+	user input,
+	calculations,
+	system actions, and
+	integrations to external systems.
+Each data element in a Pega Platform application is a pairing of two pieces of information:
+	the name of the data element (determined by a property rule) and
+	the value assigned to the data element or property.
+While processing a case, data elements remain in memory for use by one or more users. Each data element is stored in memory on
+	a page.
+A page (for case processing / data elements) is
+	a structure for organizing data elements in an application.
+During case processing, each page remains
+	in memory in a structure known as the clipboard.
+The clipboard is
+	the portion of memory on the server reserved by Pega Platform for the data generated by applications.
+The clipboard consists of
+	all of the pages used to track the property-value pairs that represent
+	case and session data.
+The clipboard receives its name because
+	pages can be
+	added to or removed from
+	memory as needed to track
+	case or session data.
+When a value is assigned to a data element, the data element and its value are
+	on the clipboard.
+As you run a process, your application uses the clipboard to
+	populate fields on UI forms,
+	perform calculations, and
+	evaluate decisions.
+Pega Platform provides the Clipboard tool to
+	display data in memory.
+The Clipboard tool organizes and presents
+	all the pages in memory, listing all the properties on each page and the value of each property.
+The Clipboard tool is accessible from
+	the Developer toolbar and contains three areas:
+	the header,
+	the left pane, and
+	the right pane.
+pyWorkPage stores
+	data that is generated during
+	case creation and processing.
+pyWorkPage is
+	a specific page on the clipboard and stores
+	data such as the case creation date and the case ID.
+Embedded pages within pyWorkPage store
+	sets of case data as defined by a data type.
+pyWorkCover contains
+	the case data for the parent case.
+pyWorkCover enables you to
+	copy data between the parent case and the child case and
+	confirm that any data mapped from the parent case to the child case is correct.
+What page on the clipboard does a child case always have?
+	pyWorkCover
+Each page on the clipboard is
+	an instance of a specific class
+When you configure a rule that references a page, you indicate
+	the class of the referenced page.
+Indicating the class of a page allows Pega Platform to resolve
+	references to rules within that class, such as properties.
+When you attempt to save a rule that contains references to other rules,
+	Pega Platform attempts to resolve those references.
+If the rule contains one or more unresolved references,
+	Pega Platform cancels the save operation and informs you of the unresolved references.
+To indicate the class of a page used by a rule, use the
+	Pages & Classes tab of the rule to list
+	the referenced page and the
+	class of that page.
+An edit validate rule is used to perform validation based on
+	data format.
+You call an edit validate rule as part of
+	the validation logic for a specific property.
+What type of validate rule should you use if you want to check whether the input that your user provides is relevant.
+	edit validate rules, by verifying character patterns
+Data transforms do what?
+	copy selected data from one source to another and manipulate the data as needed
+When should you use a data transform?
+	when a data reference is insufficient for your business need
+The purpose of a data transform is to
+	manipulate data in an application.
+True or False? You cannot use data transforms to iterate over entire page lists or page groups and copy entire pages at a time.
+	False. You can use data transforms to iterate over entire page lists or page groups and copy entire pages.
+You should reference data from a parent case when you want to avoid
+	synchronization issues if data changes on the parent case.
+Setting default property values reduces what?
+	testing time and increases
+	data entry efficiency.
+Data transforms can be used to automatically
+	set default property values for
+	test data,
+	common values, and
+	known information.
+What are two data transforms that are used automatically by Pega to set default property values and page properties when you create a case?
+	pyDefault and
+	pySetFieldDefaults
+Use pySetFieldDefaults to
+	set values for UI fields.
+Use pyDefault to
+	set values for properties not referenced in the UI.
+The first time you create a view for your case type, Pega Platform creates the pyDefault and pySetFieldDefaults data transforms. You can also create them manually. When a new case is created, the pyDefault data transform is invoked by the pyStartCase process. PyDefault then invokes the pySetFieldDefaults data transform.
+Developers can make data transforms more modular by using
+	a superclass.
+A data transform superclass allows you to
+	combine several data transforms using the superclass feature to set values at
+	multiple levels of the class hierarchy.
+When the superclass feature is enabled on data transforms, Pega:
+	Identifies the parent of the current class
+	Identifies the next level parent until the highest parent class is located
+	Finds the data transform
+	Invokes data transforms
+To configure the superclass feature for data transforms, from the Dev Studio workspace:
+	create a data transform with the same class name at each level and
+	ensure the Call superclass data transform option is selected on the desired data transform.
+If properties are specified in both the parent and subclasses of a superclassed data transform, the data transform in the subclass does what to the data transform of the parent class?
+	overwrites the data transform in the parent class.
+The standard Work- pyDefault data transform sets property values that are used
+	in all case types. The properties include
+	work status,
+	work urgency, and
+	operator organization information.
+A data page retrieves
+	data from
+	a specified data source and
+	caches that data in memory.
+A data page manages the
+	integration to the data source, separating business processes from
+	any integration details.
+Applications only attempt to populate the contents of a data page when
+	the page is accessed
+Due to only being populated when they are accessed data pages are considered what type of rule?
+	a type of declarative rule.
+Pega Platform automatically prepends what characters to the name of a data page?
+	the characters D_
+When creating a data page, a developer must provide four key pieces of information:
+	The structure of the page contents
+	The object type represented by the contents of the data page
+	The edit mode supported by the page
+	The scope of the data page
+In App Studio, Pega Platform automatically creates three data views for a data object when you specify a data source:
+	a data view containing a single item,
+	a data view containing a list of items, and
+	a data view configured to push changes back to the data source.
+The structure of a data page determines
+	whether the data page can contain one item or many items.
+When using a list structure for a data page, the data page embeds the list items in an ordered array named
+	pxResults.
+To access a specific record within the list, use the syntax
+	DataPageName.pxResults(n), where n is the index of the ordered array that corresponds to the record.
+Pega is indexed starting with
+	one (not 0)
+The object type of a data page identifies
+	the information contained by the data page (a class)
+The edit mode of a data page indicates
+	how — or if — an application can manipulate the information on a data page. The edit modes are:
+	Read-Only
+	Editable
+	Savable
+If the data page mode is Editable, the Clipboard tool lists the data page in
+	the User Pages category.
+The scope of a data page determines
+	the visibility of the page contents within the application. The options are:
+	Thread,
+	Requestor, or
+	Node.
+Use the Data sources section of the data page form to specify
+	how Pega Platform populates the contents of a data page when an application references the page. The options for data sources include:
+	Data transform
+	Activity
+	Connector
+	Report definition
+	Database lookup
+	Robotic automation
+	Robotic desktop automation
+For which data sources must you configure a data transform to map the response to the data model? When…
+	Using a report definition to source a page structure
+	Using a lookup to source a list structure
+	Using a robotic automation
+	Using a robotic desktop automation
+the Aggregate sources option on a data page allows you to
+	combine data from multiple sources to populate the data page
+True or false? A data page must specify at least one data source.
+	True.
+When should you use parameters on a data page?
+	When you want to limit or filter the contents of a data page
+Out-of-date data page data is called
+	stale data
+When a user first accesses a data page, Pega does what?
+	populates the page with up-to-date information.
+The Reload once per interaction data page option updates the contents of the data page
+	each time a user accesses the page in memory. This option is available only for pages with the scope set to
+	Thread or
+	Requestor and cannot be
+	combined with any other refresh option.
+Do not reload when data page option uses
+	a when condition to test whether the data page is considered stale. If the condition returns a result of true, the contents of the data page are considered
+	current and Pega Platform does not attempt to update the data page.
+Reload if older than data page option uses
+	a fixed interval of time to determine whether a data page is stale. After the interval ends, the data page contents are
+	considered stale, and
+	the next attempt to access the data page causes Pega to update the data page.
+Pega Platform never refreshes a data page more than one time per
+	interaction, regardless of how the data page refresh options are configured.
+To autopopulate pages with data, Pega Platform provides you with
+	the option to refer to or copy data that is stored in another system or application.
+when you always need the most current data from an external system or application for a data page use the
+	“Refer to the data page” data page option. This option does not copy the data. Instead, the application
+	refers to the data from the
+	source when needed.
+When you need data from a specific point in time, use
+	“Copy data from the data page” data page.
+When using “Copy data from the data page” data page options, and the data has been copied, when would the application copy the data again?
+	if the request parameters change. But when the parameter changes, what happens to the data page?
+	a new data page is created and impacted data is copied to the property and overwrites the existing data.
+When you copy data from a data page, the data is stored where?
+	in the property. and the data page is
+	not accessed again unless it has a parameter that changes.
+When you populate a list or UI element with data from a data page, the items update according to
+	the refresh strategy specified on the data page.
+The Primary keyword can be used to explicitly set
+	the context for the step to the data page that called the data transform.
+A table layout is for
+	simple text entry controls, such as
+	input fields or
+	calendar controls. The textual data is presented in a series of
+	columns and rows. Like a spreadsheet
+What is a downside of a table layout?
+	It has limited responsive capabilities.
+Simulating an external data source is useful in situations when
+	the external system is unavailable and also when
+	you want to unit test since you can dictate the returned response
+You can simulate any external data source as long as you know
+	what data the source is expecting and returning.
+A connection between systems consists of two parts:
+	a connector (sometimes referred to as a
+	service connector) to initiate a request, and a
+	service to fulfill the request. The connector on the requesting system establishes
+	a link to a service on the responding system to exchange data between the two systems.
+A connector defines
+	an outbound request for information.
+SOAP stands for
+Simple Object Access Protocol
+REST stands for
+	Representational State Transfer
+REST and SOAP are what?
+	agreed-upon frameworks for passing data
+In Pega Platform, you implement a connector with a
+	connector rule.
+When you use a connector to request information from a data source, you can call the connector from
+	a data page.
+When you use a connector to send information to a data source, you can call the connector from
+	an activity.
+You can call a connector from
+	a data page or
+	an activity
+A service processes an inbound request and responds to the requesting system. Services define parameters for passing data needed to fulfill the request and the structure and format of the response, such as eXtensible Markup Language (XML) or JavaScript Object Notation (JSON). The requesting system parses the response to map the returned data to its data structure.
+XML stands for?
+	eXtensible Markup Language
+JSON stands for?
+	JavaScript Object Notation
+What are the primary uses for XML and JSON in regards to services?
+	Services respond by sending their data in XML or JSON format.
+What does a listener do in regards to a service?
+	calls service rules and runs in the background, waiting for requests
+What does RBAC stand for?
+	role-based access control. What can they prevent if used correctly?
+	risks of customer loss,
+	data breaches, and
+	legal and financial penalties
+Access control depends on two factors:
+	authentication and
+	authorization.
+Authentication
+	confirms the identity of a user and
+	verifies that the user is allowed access to an application.
+In Pega, what allows for the authentication of a user?
+	the record for the operator ID
+Authorization
+	determines what data the user can view and
+	what actions the user can perform.
+In Pega, what determines the authorization of a user?
+	The record for the access group and
+	the records of the application
+How do you achieve different levels of access control?
+	You create multiple access groups for the same application.
+An access role in Dev Studio categorizes users according to
+	their job function.
+Each access role represents
+	how a set of users interacts with an application to create and process cases.
+Access roles are associated with
+	a set of permissions.
+The Access Manager does what?
+	Simplifies the configuration of security records. You can can quickly
+	set or remove permissions for basic tasks, such as creating a case, deleting a case, or running reports.
+In the Access Manager you set permission for what?
+	the access roles associated with a particular access group.
+What happens when an access group lists more than one access role?
+	the most permissive settings are applied for the group
+Field-level auditing enables you to
+	monitor changes to important data values in your cases. From a security perspective, it is useful to track modifications when sensitive data is involved.
+Which class captures field-level tracking, and changes made in an instance of a rule?
+	the History- class.
+A declare expression is
+	a field with a value that is computed based on an expression
+Tracer color code of Gray indicates what?
+	Activity processing
+Tracer color code of Orange indicates what?
+	Events from flow, decision, or declarative rules
+Tracer color code of Light Blue indicates what?
+	PegaRULES database and cache operations
+What is a step page?
+	the current context that we’re are running in.
+DevOps is
+	a set of practices that bridge application development and operational behavior to
+	reduce time to market without compromising on
+	quality and operational effectiveness.
+DevOps allows application developers and business owners to
+	quickly respond to customer needs, and develop
+	a quicker feedback cycle.
+The practices of continuous integration, continuous delivery, and continuous deployment create a
+	standardized deployment process so that you can deploy predictable, high-quality releases.
+A continuous integration and continuous delivery (CI/CD) pipeline is
+	an automated process to quickly move applications from development through testing to deployment.
+With continuous integration, application developers frequently
+	check in changes to the source environment and use
+	an automated build process to automatically verify these changes. They ensure that
+	all the necessary critical tests are run before
+	integrating and publishing changes to
+	a development repository.
+With continuous delivery, application changes run through
+	rigorous automated regression testing and are deployed to
+	a staging environment for
+	further testing to ensure that
+	the application is ready to deploy on the production system.
+In Pega what tool supports DevOps?
+	the Deployment Manager
+Use Deployment Manager to
+	configure and run continuous integration and delivery (CI/CD) workflows for your Pega applications from within Pega Platform™.
+With the Deployment Manager you can
+	create a standardized deployment process to deploy predictable, high-quality releases without using third-party tools and fully automate your
+	CI/CD workflows, including
+	branch merging,
+	application package generation,
+	artifact management, and
+	package promotion to different stages in the workflow.
+Agile development best practices include:
+	Frequent development iterations that are small in scope
+	Continuous application testing to identify issues early
+	Branched development that ensures only quality configurations are introduced
+Agile development allows for
+	continuous, iterative application development based on
+	small scope business requirements.
+In Agile development when the requirements change, you can
+	quickly capture feedback, and then
+	make smaller but more
+	frequent in-app changes to incorporate feedback in real time.
+DevOps tightens the integration between
+	development teams,
+	test teams, and
+	post-go-live support teams to provide
+	a more streamlined and automated
+	build, test, and deploy process.
+The most basic form of application testing is
+	unit testing individual rules.
 An enterprise
 	a complex organization structure
 	many locations
@@ -37,102 +1297,113 @@ Rule resolution
 	used to find the most appropriate instance of a rule
 	occurs whenever a rule is needed to accomplish processing of a case
 	applies to most rules that are instances of classes derived from the abstract Rule- base class
-instances of the abstract Rule- base class
-Case types (Rule-Obj-CaseType )
-Properties (Rule-Obj-Property )
-UI rules such as Sections (Rule-HTML-Section) and Harnesses (Rule-HTML-Harness)
-Declare expressions (Rule-Declare-Expression)
-Data pages (Rule-Declare-Pages)
-rule resolution does not apply to
+Instances of the abstract Rule- base class
+	Case types (Rule-Obj-CaseType )
+	Properties (Rule-Obj-Property )
+	UI rules such as Sections (Rule-HTML-Section) and Harnesses (Rule-HTML-Harness)
+	Declare expressions (Rule-Declare-Expression)
+	Data pages (Rule-Declare-Pages)
+Rule resolution does not apply to
 	instances of classes derived from Data-, System-, or Work-
-a rule's type
-	defined by the class from which the rule is derived
-the Rules Cache
-	helps ensure rule resolution operates efficiently
-	populated by a multiple-step process
-	part of the rule resolution algorithm
-rule resolution algorithm
-	creates a list of all rules that match the purpose of the rule in question to populate the rules cache
-	all rule candidates marked as Not Available are discarded
-	all rule candidates not in the operator's Ruleset list are discarded
-	all rule candidates not defined in a class in the ancestor tree are discarded
-	rank the remaining rule candidates (“winner” is chosen)
-	remaining rule candidates are added to the Rules Cache
+A rule's type is defined by
+	the class from which the rule is derived
+The Rules Cache helps ensure
+	rule resolution operates efficiently and is populated by
+	a multiple-step process.
+The Rules Cache is part of
+	the rule resolution algorithm
+Rule resolution algorithm creates
+	a list of all rules that match the purpose of the rule in question to populate
+	the rules cache
+During the rule resolution algorithm, what rules are instantly discarded?
+	all rule candidates marked as Not Available
+	all rule candidates not in the operator's Ruleset list
+	all rule candidates not defined in a class in the ancestor tree
 If a rule is blocked
 	execution is halted, and an error message is added to the log file.
-if a user does not have the privileges required to run a rule
+If a user does not have the privileges required to run a rule
 	Pega sends a message: “the rule is not authorized for execution.”
-Availability of a rule:
-	visible on the rule form next to the rule name or description
-	used to determine if a rule is available for use during rule resolution
-	used to determine if you can view, copy, or edit a rule in Dev Studio.
-Availability: Available:
+Availability of a rule is visible where?
+	on the rule form next to the rule name or description
+The availability of a rule is used to determine
+	if a rule is available for use during rule resolution and if a rule can be
+	viewed, copied, or edited in Dev Studio.
+Rule Availability: Available
 	may be used
 	the default
 	can view, copy, edit, and execute
-Availability: Final:
+Rule Availability: Final
 	may be used
 	can view and execute
 	cannot be edited or copied
 	indicates may be changed in subsequent releases
-Availability: Not Available:
+Rule Availability: Not Available
 	may not be used
 	indicates to the algorithm to use the next-highest version
 	can view, copy, edit
 	cannot execute
 	good for initial development: “allows you to save a rule without validation” (?)
-Availability: Blocked:
+Rule Availability: Blocked
 	may be used
 	can view, copy, edit
 	does not execute (is available)
 	if executed, execution is halted, and an error message is added to the log file.
-Availability: Withdrawn:
+Rule Availability: Withdrawn
 	may not be used
 	can view, copy, edit
 	does not execute
 	all rules that are in the same ruleset with an equal or lower
 	version number and the same rule type and Apply to: class are hidden and no longer considered after Availability is checked during the rule resolution process.
-circumstancing
-	a way of modeling complex exceptions by creating a variant of a rule
-	allows you to customize the behavior of your application to address each exception condition you identify using a collection of targeted rules rather than one complex, difficult-to-maintain rule
-	establishes a baseline for expected case behavior and adds variants to address exceptions to the behavior
-the goal of circumstancing
-	create a variant for each anticipated situation
-To circumstance a rule:
-	start by creating a base rule to define the expected behavior then, identify any exceptions to the expected behavior
-the base rule is used if
-	a circumstanced version that is more appropriate can’t be found
-the circumstance template:
-	the rule that defines the properties used to determine if the circumstance is applicable
-a circumstance definition:
-	defines the values for the circumstance template
-Queue processors:
-	queue objects and then process them
-if queued process fails, the queue entry goes into
+Circumstancing is a way of modeling
+	complex exceptions by creating a variant of a rule
+Circumstancing allows you to
+	customize the behavior of your application to address
+	each exception condition you identify using a collection of
+	targeted rules rather than
+	one complex, difficult-to-maintain rule
+Circumstancing establishes what before specializing?
+	A baseline rule for expected case behavior and then adds variants to address exceptions to the behavior
+The goal of circumstancing is to create
+	a variant for each anticipated situation.
+To circumstance a rule start by creating
+	a base rule to define the expected behavior then, then
+	identify any exceptions to the expected behavior.
+The base rule is used if
+	a circumstanced version that is more appropriate can’t be found.
+The circumstance template is
+	the rule that defines the properties used to determine if the circumstance is applicable.
+A circumstance definition defines the values for
+	the circumstance template.
+Queue processors do what?
+	Queue objects and then process them in background processing.
+If a queued process fails, the queue entry goes into
 	failure status. This indicates the process is
 	broken. What happens to any any changes the process initiated?
 	They are reversed.
-the Queue processor landing page in Admin Studio does what
+The Queue processor landing page in Admin Studio does what
 	traces and monitors Queue Processor rules
-users with the SysAdmin4 role can do what and examine what
-	can troubleshoot errors
-	examine items in the Broken queue
-the job scheduler
-	triggers items to process at pre-configured times
-	does not queue items
-the Performance tool:
-	manages statistic aggregation for job scheduler rules
-you can configure the ASYNCPROCESSOR requestor type to
-	include an access group with access to the application
-the Queue processors page is used to
+Users with the SysAdmin4 role can do what and examine what
+	can troubleshoot errors in the Queue processor landing page and examine
+	items in the Broken queue.
+The job scheduler triggers what?
+	the processing of items at pre-configured times. It does not what?
+	Queue items.
+The Performance tool manages
+	statistic aggregation for job scheduler rules.
+You can configure the ASYNCPROCESSOR requestor type to include
+	an access group with access to the application.
+The Queue processors page is used to
 	trace, start and stop queue processors
 Tracing processes on the Queue processors page:
-	enables you to examine issues only while processes are running
-to start a processor trace:
-	In Admin Studio, click Resources > Queue processors
-	On the row of the queue processor you want to trace, click the Actions menu icon to open the actions menu.
-	On the Actions menu, click Trace to begin the trace.
-what is written to log files:
+	enables you to examine issues only when?
+	While processes are running
+To start a processor trace: In Admin Studio, click
+	Resources > Queue processors
+	On the row of the queue processor you want to trace, click
+	the Actions menu icon to open the actions menu.
+	On the Actions menu, click
+	Trace to begin the trace.
+What is written to log files?
 	errors
 	warnings
 	and other debug items
@@ -140,14 +1411,14 @@ Logs track:
 	exceptions
 	events that impact your application
 	provide valuable insight into their cause
-an appender:
-	manages each log
-	determines the type of events written to the log file
-where is the appender configuration stored
-	the prlog4j2.xml file, used for the entire node.
-logs can be found where
-	In Dev Studio, from the Configure > System > Operations landing page
-what are the different types of logs:
+An appender manages what?
+	Each log and determines what?
+	The type of events written to the log file.
+Where is the appender configuration stored?
+	In the prlog4j2.xml file, used for the entire node.
+Logs can be found where
+	In Dev Studio, from the Configure > System > Operations landing page.
+What are the different types of logs?
 	PEGA log
 	ALERT log
 	ALERTSECURITY log
@@ -184,7 +1455,7 @@ Logging Level Settings tool 
 	controls which logging events appear in the PEGA log.
 prlog4j2.xml configuration file
 	defines the levels of logging events
-you can create separate prlog4j2.xml files for
+You can create separate prlog4j2.xml files for
 	each node
 In terms are of logging are rulesets and the Pega class hierarchy important?
 	no, they are irrelevant to logging.
@@ -197,18 +1468,18 @@ the PegaRULES Log Analyzer (PLA) consolidates and summarizes which three logs?
 	ALERT log (performance)
 	PEGA log (stability)
 	Garbage Collection log (memory)
-performance, stability, and scaling issues are most likely to occur when
+Performance, stability, and scaling issues are most likely to occur when
 	during performance testing
 	right after deployment
-the Tracer
-	allows you to view events such as a case is processed
-	identifies the processing steps that lead to an error
-is the Tracer resource intensive?
-	yes! it dramatically slows application performance
-what two designations does the Tracer log give to steps:
+The Tracer allows you to
+	view events such as how a case is processed and identifies
+	the processing steps that lead to an error.
+Is the Tracer resource intensive?
+	Yes! it dramatically slows application performance
+What two designations does the Tracer log give to steps:
 	a status of Good
 	a status of Fail
-the Tracer log displays each event on a separate row. what are the colors and what do they mean?
+The Tracer log displays each event on a separate row. what are the colors and what do they mean?
 	Gray – Activity processing
 	Orange – Events from flow, decision, or declarative rules
 	Light blue – PegaRULES database and cache operations
@@ -1172,14 +2443,14 @@ Data access patterns are simple …?
 	mechanisms to manage data
 What are the three types of data access patterns?
 	system of record
-	which option in the Data Access section?
-	Refer to a data page option
+	-which option in the Data Access section?
+	-Refer to a data page option
 	snapshot
-	which option in the Data Access section?
-	Copy data from a data page option
+	-which option in the Data Access section?
+	-Copy data from a data page option
 	reference
-	which option in the Data Access section?
-	None! To implement reference a data page from a record other than a property. The data will reload according to the refresh strategy specified on the data page
+	-which option in the Data Access section?
+	-None! To implement reference a data page from a record other than a property. The data will reload according to the refresh strategy specified on the data page
 The system of record data access pattern is always
 	current and reloads
 	according to the refresh strategy specified
@@ -1240,11 +2511,11 @@ What does the the Access Manager simplify?
 	the configuration of security records
 What are the three tabs in the Access Manager?
 	Work & Process tab
-	controls access to instances of a specific case type
+	-controls access to instances of a specific case type
 	Tools tab
-	controls access to tools such like the Clipboard and Live UI for end users
+	-controls access to tools such like the Clipboard and Live UI for end users
 	Privileges tab
-	controls access to records like flow actions and correspondence records.
+	-controls access to records like flow actions and correspondence records.
 What are the three levels of access?
 	Full Access
 	Conditional Access

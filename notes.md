@@ -31,10 +31,8 @@ Each Studio consists of three areas:
 Pega Platform applications are made up of instructions, called
 	rules, that govern
 	application behavior.
-The App Studio overview displays
-	an Application Layers section,
-	a visual representation of the
-	rules that make up the application.
+The App Studio overview displays an Application Layers section, which is a visual representation of what?
+	The rules that make up the application.
 Layers define
 	where rules reside and
 	where rules are maintained.
@@ -60,8 +58,9 @@ Change stage steps
 Primary stages make up the
 	happy path and are
 	the stages a typical case takes towards the expected outcome.
-A multi-step form represents
-	a single assignment completed by a single user. It is a guided, linear workflow using related UI screens.
+A multi-step form represents a single
+	assignment completed by a single user. It is a guided, linear
+	workflow using related UI screens.
 The case status indicates
 	the case progress towards resolution. You can set the case status on
 	any stage and any step in the case life cycle.
@@ -76,10 +75,7 @@ Step instructions identify
 A service-level agreement (SLA) establishes
 	a work completion deadline. Organizations often establish service-level agreements to
 	enforce on-time performance.
-	SLAs -> [
-	start,
-	goal,
-	deadline], past-deadline
+	SLAs -> [start,goal,deadline], past-deadline
 Urgency is
 	a numeric value that brings visibility to
 	unresolved work in your application.
@@ -112,9 +108,7 @@ Views, also referred to as
 	forms, display
 	the fields necessary to
 	complete the current assignment.
-An application can make stored data available for
-	editing or
-	present the data as
+An application can make stored data available for editing or present the data as
 	read-only in the View.
 Data types are
 	collections of case data and provide a way for developers to
@@ -276,9 +270,9 @@ Optional actions are
 	actions that users optionally perform during case processing. May also be
 	common case processing actions that may be
 	invoked at varying times during the case
-you can make optional actions available
-	at any time during a designated stage, or
-	at any time in the entire case.
+You can make optional actions that are available only during
+	a designated stage, or
+	throughout the entire case.
 An optional action requiring a series of steps is
 	an optional process.
 Built-in case wide optional actions include
@@ -303,8 +297,7 @@ Use a Decision shape to
 Decision shapes are configured to
 	advance a workflow automatically. An automated decision evaluates
 	business logic or a set of one or more conditions
-You can define conditions that control whether
-	a process or stage runs in a case. A condition consists of
+You can define conditions that control whether a process or stage runs in a case. A condition consists of
 	a field,
 	comparator, and
 	value. Processes and stages are either
@@ -371,16 +364,14 @@ The Integration Designer is
 	object dependencies, and
 	external systems in an application and allows you to see how
 	these entities are connected.
-The Visual Data Model is
-	a diagram that provides visibility into
-	the application's data model and how
-	the entities are related. Can update, add, and delete fields from the model.
-The Integration Landscape
-	is a diagram of
+The Visual Data Model is a diagram that provides visibility into the application's
+	data model and how the entities are
+	related.
+The Integration Landscape is a diagram of
 	the data objects,
 	cases, and
-	systems of record in the application and where
-	they are sourced.
+	systems of record in the application and where they are
+	sourced.
 Business logic validations are separate from
 	the fields that capture data
 Configure business logic validations on
@@ -419,8 +410,8 @@ What can you use in columns to make reports more useful?
 Calculations (or functions) in reports enable you to
 	calculate results derived from data in the database.
 By default, report queries return
-	all the records that contain data from all the columns as a result you may want to use a
-	filter
+	all the records that contain data from all the columns, because of this you may want to use a
+	filter.
 In reports, a filter defines
 	a test applied to each
 	record to determine
@@ -752,8 +743,8 @@ The class hierarchy determines how
 	developers can reuse rules within the application.
 An application can leverage any rule that is available to an application through the
 	class hierarchy.
-When attempting to identify the rule to use at run time, Pega Platform starts with
-	the most-specific class and expands the search to increasingly general classes.
+When attempting to identify the rule to use at run time, Pega Platform starts with the most-specific class and expands the search to increasingly
+	general classes.
 TGB-Orientation-Work is a child of the class
 	TGB-Orientation, which is a child of the class
 	TGB.
@@ -853,7 +844,7 @@ In a decision tree, common conditions and results are placed
 	at the trunk of the tree.
 In a decision tree, more-specific conditions and their actions are placed
 	farther down or “at the branches” of a decision tree.
-While processing the rows of a decision tree or table, if the system processes does not reach a returned result, the system returns
+While processing the rows of a decision tree or table, if the system does not reach a returned result, the system returns
 	the final otherwise value.
 While decision tables evaluate against
 	the same set of properties or conditions, decision trees evaluate against
@@ -1097,11 +1088,8 @@ Reload if older than data page option uses
 	the next attempt to access the data page causes Pega to update the data page.
 Pega Platform never refreshes a data page more than one time per
 	interaction, regardless of how the data page refresh options are configured.
-To autopopulate pages with data, Pega Platform provides you with
-	the option to refer to or copy data that is stored in another system or application.
-when you always need the most current data from an external system or application for a data page use the
-	“Refer to the data page” data page option. This option does not copy the data. Instead, the application
-	refers to the data from the
+When you always need the most current data from an external system or application for a data page use the
+	“Refer to the data page” data page option. This option does not copy the data. Instead, the application refers to the data from the
 	source when needed.
 When you need data from a specific point in time, use
 	“Copy data from the data page” data page.
@@ -1109,8 +1097,8 @@ When using “Copy data from the data page” data page options, and the data h
 	if the request parameters change. But when the parameter changes, what happens to the data page?
 	a new data page is created and impacted data is copied to the property and overwrites the existing data.
 When you copy data from a data page, the data is stored where?
-	in the property. and the data page is
-	not accessed again unless it has a parameter that changes.
+	in the property. And the data page is not accessed again unless
+	a parameter changes.
 When you populate a list or UI element with data from a data page, the items update according to
 	the refresh strategy specified on the data page.
 The Primary keyword can be used to explicitly set
@@ -1269,8 +1257,8 @@ Enterprise Class Structure (ECS)
 	shares any rule placed in an ECS layer across multiple applications.
 	adjust existing ECS layers as business operations change
 	enforces best practices around reuse and standardization as the system expands to other lines of business.
-Pega Platform layer
-	contains the built-in assets used for processing cases and other work
+Pega Platform layer contains the built-in assets used for
+	processing cases and other work.
 Organization layer
 	contains the assets used on an enterprise-wide basis
 	rules for enterprise-wide business logic
@@ -1292,12 +1280,13 @@ Implementation layer
 	defines an application customized for a specific division or line of business
 	may extend one or more framework layer applications
 	“brand-specific” assets, such as styling and policies
-Rule resolution
-	a search algorithm
-	used to find the most appropriate instance of a rule
-	occurs whenever a rule is needed to accomplish processing of a case
-	applies to most rules that are instances of classes derived from the abstract Rule- base class
-Instances of the abstract Rule- base class
+Rule resolution is a search...
+	algorithm used to find the most
+	appropriate instance of a rule. It occurs whenever
+	a rule is needed to accomplish processing of a case (at runtime)
+Rule resolution applies to most rules that are instances of classes derived from the abstract
+	Rule- base class.
+Instances of the abstract Rule- base class
 	Case types (Rule-Obj-CaseType )
 	Properties (Rule-Obj-Property )
 	UI rules such as Sections (Rule-HTML-Section) and Harnesses (Rule-HTML-Harness)
@@ -1459,8 +1448,9 @@ You can create separate prlog4j2.xml files for
 	each node
 In terms are of logging are rulesets and the Pega class hierarchy important?
 	no, they are irrelevant to logging.
-PegaRULES Log Analyzer (PLA)
-	a standalone web application that developers and system administrators can use to view summaries of console logs.
+PegaRULES Log Analyzer (PLA) is a standalone...
+	web application that developers and system administrators can use to view summaries of
+	console logs.
 Use the PegaRULES Log Analyzer (PLA) to:
 	test new or reconfigured Pega applications during user acceptance testing (UAT)
 	do performance and stress testing
@@ -1512,16 +1502,18 @@ the Performance Analyzer (PAL)
 	shows the system resources consumed by processing a single requestor session
 	works on existing data
 	does not degrade processing
-the Database Trace tool
-	useful to tune the application for database performance
-	use if PAL indicates performance issues in the database
-	can trace all the SQL operations like queries or commits that are performed.
-the Performance Profiler shows a detailed trace of performance information about what three things?
+The Database Trace tool is useful to tune the application for
+	database performance.
+When PAL indicates performance issues in the database, you should use what to find the issue?
+	The Database Trace tool.
+The Database Trace tool can trace
+	all the SQL operations like queries or commits that are performed.
+The Performance Profiler shows a detailed trace of performance information about what three things?
 	the execution of activities
 	when condition rules
 	data transforms …executed by your requestor session.
-the Performance Profiler
-	should be run in conjunction with Performance Analyzer
+The Performance Profiler should be run in conjunction with
+	the Performance Analyzer.
 Pega Predictive Diagnostic Cloud (PDC) runs where
 	on Pega Cloud
 Pega Predictive Diagnostic Cloud (PDC) is a
@@ -1553,27 +1545,27 @@ the Database Trace produces what:
 	rule cache hit statistics
 	timings
 	other data related to your requestor session with the Pega Platform™ database or other relational databases
-to find the Database Trace:
+To find the Database Trace:
 	Dev Studio > System > Performance > Database Trace) 	
 The Performance Analyzer (PAL) provides
 	a view of all the performance statistics that Pega Platform captures
 Use the Performance Analyzer (PAL) to
 	understand the system resources consumed by processing a single requestor session
-to find PAL in Dev Studio:
+To find PAL in Dev Studio:
 	Dev Studio > System > Performance
-the INIT row in PAL data displays
+The INIT row in PAL data displays
 	the totals from the first reading
-the DELTA rows in PAL data displays
-	indicates the change from each a previous reading 	
-the FULL row in PAL data displays
+The DELTA rows in PAL data indicates the changes from
+	a previous reading.
+The FULL row in PAL data displays
 	the total sum of all the statistics from the last time the data was reset
 PAL readings are in what measurement.
 	seconds. All values are in seconds.
-RA Elapsed value in PAL represents
-	the time spent in rule assembly
-can skew performance readings
-first use assembly (FUA)
-	what happens when you run through a process the first time
+RA Elapsed value in PAL represents the time spent in
+	rule assembly and can skew
+	performance readings.
+First Use Assembly (FUA) is what happens when
+	you run through a process the first time.
 When using PAL, run through the process once to ensure
 	all rules have been assembled before taking any measurements
 Relevant records
@@ -1659,12 +1651,14 @@ pessimistic locking strategy
 optimistic locking strategy
 	application does not apply an exclusive lock when opening an item.
 	the application checks whether the item has changed before committing any changes.
-Allow one user
+Allow one user is what type of locking strategy?
 	a pessimistic locking strategy
-	a user opens the case, Pega Platform locks the case to prevent other users from applying any changes.
-	can set a time-out value for the lock
-	After the time-out period lapses, another user can open and update the case
-	default time-out period is 30 minutes.
+Allow one user locking strategy does what when a user opens a case,
+	locks the case to prevent other users from applying any changes.
+After the time-out period lapses on a locked case, what happens?
+	The case can be accessed by another user.
+What is the default time-out period for a lock?
+	30 minutes.
 Allow multiple users
 	an optimistic locking strategy
 	Pega Platform checks for changes to the case when a user attempts to save their updates
@@ -1781,9 +1775,9 @@ to add a new unit to an organizational structure:
 	Create a new work queue.
 	Associate the work queue with the work group.
 	Associate the unit and work group with an operator.
-when adding a new unit to an organizational structure you cannot create…
-	both the work queue and the work group at the same time as they are mutually dependent
-	use an existing work queue then go back and update the work group to correct work queue
+When adding a new unit to an organizational structure you cannot create what two things at the same time?
+	Both the work queue and the work group at the same time as they are mutually dependent. You should use an existing
+	work queue then go back and update the work group to the correct work queue.
 where do you create new organization records like units, work groups, and work queues?
 	the Records Explorer
 organization names in the Records Explorer are
@@ -1797,10 +1791,10 @@ creating a local list on the property record for the list of allowed values for 
 	short, mostly static, and common for all case types in the application.
 using field values for the list of allowed values for a specific property is good when the list is
 	large, expected to change frequently, or may be specific for each case type
-when using field values you can manage
-	the list of allowed values separately from the property
-field values enable
-	reuse and customization based on the context
+When using field values you can manage the list of allowed values separately from
+	the property.
+Field values enable reuse and customization based on
+	the context.
 .pyStatusWork is
 	a field value in the Work- context
 field values support localization of
@@ -1843,8 +1837,8 @@ Portal records are listed in
 	the User Interface category in both the Records Explorer and the Create menu.
 Portal records are classless and do not appear
 	in the App Explorer
-User portals are intended for
-	users who do not routinely need to update rules
+User portals are intended for users who do not routinely need to
+	update rules.
 User portals require less
 	memory on the user's workstation than developer portals
 User portals can be used to configure
@@ -1853,7 +1847,7 @@ Developer portals are intended for
 	system architects and business architects who routinely update rules.
 where can you select the user role and portal type
 	on the Details tab of the portal record
-default user portals are organized with:
+Default user portals are organized with what three things?
 	a header
 	a left navigation pane
 	a content pane
@@ -2284,7 +2278,7 @@ Select two record types that are involved when configuring a production ruleset.
 	Application
 An agent runs every day at 7:00 A.M. You have been asked to update the agent so that it runs once every 300 seconds. How would you modify the agent schedule to meet this requirement?
 	Change the Recurring pattern to Periodic and enter the Interval value.
-An error is generated as a connector invokes a remote service. Which of the following could be an example of a transient error?
+An error is generated as a connector invokes a remote service. What could be an example of a transient error?
 	The service is running on a system that is temporarily not available.
 Which of the following is not part of the organizational structure?
 	Work Group
@@ -2305,7 +2299,8 @@ To configure a global resource setting (GRS) for an integration
 	create a page property for each environment reference
 	create a data transform to assign values to the environment properties using utility functions
 	create a data page to tie these artifacts together.
-to refer to the values on a data page with GRS (=something.something.something):
+To refer to the values on a data page with GRS use ...
+	(Hint: =something.something.something)
 	=DataPageName.IntegrationPropertyName.FieldPropertyName
 order of events to determine the Endpoint URL for a SOAP connector:
 	The SOAP Connector is invoked.
@@ -2624,9 +2619,10 @@ Which rule availabilities mark a rule as “not carried forward” during a mino
 Which rule availabilities mark a rule as “not carried forward” during a major skim?
 	Withdrawn
 	No (not available)
-the skimming wizard identifies
-	the highest-numbered version for each rule  instance in a specified ruleset, and
-	creates a copy with the number you specify.
+The skimming wizard identifies the highest-numbered
+	version for each rule instance in a specified
+	ruleset, and creates a
+	copy with the number you specify.
 What are two best practices for skimming?
 	confirming the rules for the new version are checked in.
 	locking all but the highest ruleset versions.
@@ -2713,8 +2709,8 @@ when you check out a rule, you are create
 	a private copy of the rule to modify and test
 when is the the private edit button displayed?
 	when a rule is in a locked ruleset version
-branches
-	help teams manage parallel development in distributed environments
+Branches help teams manage parallel development in
+	distributed environments.
 branch
 	a container for rulesets with records that are undergoing rapid change and development
 	allow each team to work within an isolated space. create and update rules without impacting other teams
@@ -2752,9 +2748,9 @@ the contents of a product rule are put into a ZIP archive file called…
 a RAP file
 	is a zip file that consists entirely of:
 	XML documents in Unicode characters
-to create an a RAP file
-	create a product rule:
-	identifies the components you want to include in the archive file
+To create a RAP file create
+	a product rule that identifies the
+	components you want to include in the archive file
 To make sure everything is complete and correct for migration, before you create an archive file you should do what things?
 	Do not lock delegated rulesets
 	Associate your data records with rulesets.
@@ -2808,7 +2804,7 @@ Which default portal do subclass to create an offline mobile portal?
 	the pyCaseWorker portal. it contains design elements optimized for offline use with a Pega mobile app.
 For users to work on cases offline, you must enable the appropriate
 	case type for offline processing.
-Where do configure a case for offline access?
+Where do you configure a case for offline access?
 	after opening the case type in Case Designer
 	On the case type Settings tab, select General, and then select the Enable offline check box.
 	to open a case type in the Case Designer, click a case type link in the Case types tab on the Offline Configuration landing page
@@ -2829,9 +2825,9 @@ What types of Pega features might be affected by an offline-enabled mobile app b
 	question shape flow actions
 	field validation
 	flows that create child cases
-The an offline-enabled mobile app’s synchronization process can
-	affect performance
-	strain server resources
+An offline-enabled mobile app’s synchronization process can affect
+	performance and strain
+	server resources.
 What two things should you keep in mind when designing apps for offline mode?
 	making essential elements available offline for a consistent user experience
 	ensuring synchronizations are fast and efficient.
