@@ -1851,8 +1851,8 @@ Default user portals are organized with what three things?
 	a header
 	a left navigation pane
 	a content pane
-how do you modify the contents of a section?
-	use Live UI to identify and open the section to change it
+How do you modify the contents of a section you are viewing?
+	Use Live UI to identify and open the section to change it.
 to create a new layout for a portal you should create a new harness in the Data-Portal class and add a section layout to the portal. But what must you reference on the Details tab of the portal record after doing this?
 	the new harness
 Skins contain instructions for
