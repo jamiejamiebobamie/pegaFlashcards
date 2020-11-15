@@ -87,8 +87,6 @@ class FlashCardInterface extends React.Component {
     // set the react component's state 'cards' to the
         // shuffled and sanitized cards
      this.setState({cards:sanitizedCards})
-     this.setState({cardIndex:sanitizedCards.length-1})
-
     }
     componentWillUnMount() {
      window.addEventListener("resize", this.handleResize);

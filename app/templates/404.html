@@ -1,6 +1,16 @@
-{% extends "base.html" %}
-
-{% block content %}
-    <h1>File Not Found</h1>
-    <p><a href="{{ url_for('index') }}">Back</a></p>
-{% endblock %}
+<html>
+    <head>
+        <title>Pega Flashcards</title>
+    </head>
+    <body>
+        <div id="reactHolder"></div>
+        <!-- Loading in the data from the backend. React app reads data from HTML and displays it in flashcard format. Temporary setup. -->
+        <div style="position: absolute;left:-10px;top:-10px;font-size:0;width:0;height:0;" id="flashCardContent">{{cards}}</textarea>
+        <!-- Load React. -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+        <!-- Load React component. -->
+        <script type="text/jsx" src="{{url_for('static', filename='FlashCardInterface.jsx')}}"></script>
+    </body>
+</html>
