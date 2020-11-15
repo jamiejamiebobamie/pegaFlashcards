@@ -105,7 +105,7 @@ class FlashCardInterface extends React.Component {
                             justifyContent:"space-around",
                             width:"95%",
                             height:"70%",
-                            marginLeft:"2.5%",
+                            // marginLeft:"2.5%",
                             marginTop:"10vh",
                         }
                     }
