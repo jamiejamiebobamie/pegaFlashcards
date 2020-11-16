@@ -110,8 +110,10 @@ class FlashCardInterface extends React.Component {
                         }
                     }
         buttonStyle = {
-                        color: "black",
-                        backgroundColor: "transparent",
+                        // color: "black",
+                        // backgroundColor: "transparent",
+                        color: "white",
+                        backgroundColor: "black",
                         borderStyle:"none",
                         width:"5vw",
                         height:"5vw",
@@ -240,8 +242,10 @@ class FlashCardInterface extends React.Component {
                         }
                     }
         buttonStyle = {
-                        color: "black",
-                        backgroundColor: "transparent",
+                    // color: "black",
+                    // backgroundColor: "transparent",
+                        color: "white",
+                        backgroundColor: "black",
                         borderStyle:"none",
                         width:"5vw",
                         height:"5vw",
